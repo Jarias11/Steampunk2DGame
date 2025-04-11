@@ -15,7 +15,8 @@ MonoBehaviour:
   npcName: Lightning
   portrait: {fileID: 0}
   dialogueLines:
-  - Hi there,  Welcome to BJLand!
+  - Hi welcome to BJLand
+  - Watcha lookin for?
   isRomanceable: 1
-  age: 25
-  favoriteItem: Candy
+  age: 27
+  favoriteItem: DevilFruits
