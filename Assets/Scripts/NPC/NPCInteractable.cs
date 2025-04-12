@@ -61,8 +61,6 @@ private void OnTriggerExit2D(Collider2D other)
             portraitRenderer.sprite = npcData.portrait != null
                 ? npcData.portrait
                 : GameManager.Instance.defaultNPCPortrait;
-
-            Debug.Log("Assigned sprite for " + npcData.npcName + ": " + portraitRenderer.sprite?.name);
         }
     }
 }

@@ -4,6 +4,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
+    private float inputDelay = 0.2f;
+    private float timeSinceStart = 0f;
 
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
@@ -19,17 +21,22 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (isTalking && Input.GetKeyDown(KeyCode.E))
+        if (isTalking)
         {
-            DisplayNextLine();
+            timeSinceStart += Time.deltaTime;
+
+            if (timeSinceStart >= inputDelay && Input.GetKeyDown(KeyCode.E))
+            {
+                DisplayNextLine();
+            }
         }
     }
 
     public void StartDialogue(string[] lines)
     {
         if (lines == null || lines.Length == 0) return;
-
         currentLines = lines;
+        timeSinceStart = 0f;
         currentIndex = 0;
         isTalking = true;
 
