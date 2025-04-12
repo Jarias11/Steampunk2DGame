@@ -8,6 +8,6 @@ public class InventorySystem : MonoBehaviour
     public void AddItem(string item)
     {
         inventory.Add(item);
-        Debug.Log(item + " added to inventory.");
+        Debug.Log(item + " random");
     }
 }
