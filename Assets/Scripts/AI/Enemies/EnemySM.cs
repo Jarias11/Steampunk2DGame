@@ -14,9 +14,11 @@ public class EnemySM : MonoBehaviour
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
+        Agent.Warp(transform.position);
     }
     private void Start()
     {
+        
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
