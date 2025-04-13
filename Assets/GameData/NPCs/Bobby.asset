@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e95053b313d7a34da3f374a55e18efd, type: 3}
+  m_Name: Bobby
+  m_EditorClassIdentifier: 
+  npcName: Bobby
+  portrait: {fileID: 0}
+  dialogueLines:
+  - "I swear the lightning talks when no one\u2019s looking."
+  - "BJ Land? Heh... that\u2019s not really what it stands for... is it?"
+  - "Don\u2019t tell anyone, but I think the mountains are listening..."
+  - "Don\u2019t mind me! I\u2019m just fixing things that weren\u2019t broken until
+    I touched \u2018em."
+  - "I\u2019m not mad... just mechanically misunderstood."
+  isRomanceable: 1
+  age: 33
+  favoriteItem: Hobo's Left shoe
