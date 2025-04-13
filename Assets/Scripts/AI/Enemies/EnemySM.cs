@@ -1,14 +1,20 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySM : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 2f;
     public float chaseRange = 5f;
+    public NavMeshAgent Agent { get; private set; }
 
     [HideInInspector] public Transform Player;
     private EnemyBase currentState;
 
+    private void Awake()
+    {
+        Agent = GetComponent<NavMeshAgent>();
+    }
     private void Start()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");

@@ -1,25 +1,29 @@
 using UnityEngine;
 
-public class EnemyChase: EnemyBase{
+public class EnemyChase : EnemyBase
+{
     public override void EnterState(EnemySM enemy)
     {
-
+        enemy.Agent.isStopped = false;
     }
 
     public override void UpdateState(EnemySM enemy)
     {
+
+        if (enemy.Player == null) return;
+
         float distance = Vector2.Distance(enemy.transform.position, enemy.Player.position);
         if (distance > enemy.chaseRange)
         {
             enemy.SwitchState(new EnemyIdle());
             return;
         }
-        Vector2 direction = (enemy.Player.position - enemy.transform.position).normalized;
-        enemy.transform.position += (Vector3)(direction * enemy.moveSpeed * Time.deltaTime);
+        Debug.Log("Chasing player...");
+        enemy.Agent.SetDestination(enemy.Player.position);
     }
     public override void ExitState(EnemySM enemy)
     {
-        
+        enemy.Agent.isStopped = true;
     }
 
 }
