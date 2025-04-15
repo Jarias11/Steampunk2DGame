@@ -6,17 +6,36 @@ public class EnemySM : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 2f;
     public float chaseRange = 5f;
+    public float attackRange = 2f;
 
-    public SpriteRenderer spriteRenderer;
+    [Header("Vision")]
+    public LayerMask visionMask;
+    public UnityEngine.Vector2 eyeOffset = new Vector2(0f,0.3f);
+
+
+    [Header("Combat")]
+    public float windUpTime = 0.30f;
+    public float hitboxTime = 1.00f;
+    public float cooldownTime = 0.70f;
+    public GameObject hitboxPrefab;
+
+    //Runtime variables
+    
     public NavMeshAgent Agent { get; private set; }
-
     [HideInInspector] public Transform Player;
+    public SpriteRenderer spriteRenderer;
+    
+    public UnityEngine.Vector3 spawnPos { get; private set; }
+    public UnityEngine.Vector3 lastSeenPlayerPos { get; private set; }
+    
     private EnemyBase currentState;
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         Agent = GetComponent<NavMeshAgent>();
-        Agent.Warp(transform.position);
+        spawnPos = transform.position;
+        
     }
     private void Start()
     {
@@ -56,4 +75,34 @@ public class EnemySM : MonoBehaviour
         else if (direction.x < -0.01f)
             spriteRenderer.flipX = false;  // Facing left
     }
+
+    public bool canSeePlayer(){
+        if(Player==null) return false;
+        Vector2 toPlayer = Player.position - transform.position;
+        float distSq = toPlayer.sqrMagnitude;
+        float maxSq = chaseRange * chaseRange;
+
+        if(distSq > maxSq) return false;
+
+
+        Vector2 origin = (Vector2)transform.position + eyeOffset; 
+        Vector2 dir = toPlayer.normalized;
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin,dir,chaseRange, visionMask
+        );
+        return hit && hit.collider.CompareTag("Player");
+    }
+
+    public void LostPlayer(Vector3 lastPos){
+        lastSeenPlayerPos = lastPos;
+        SwitchState(new EnemySearch(lastSeenPlayerPos));
+
+    }
+
+
+
+
+
+
 }

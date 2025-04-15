@@ -5344,7 +5344,7 @@ GameObject:
   - component: {fileID: 646814006}
   - component: {fileID: 646814007}
   - component: {fileID: 646814008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6416,7 +6416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006907425}
   - component: {fileID: 1006907426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6777,8 +6777,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   chaseRange: 7
-  spriteRenderer: {fileID: 1189042227}
+  attackRange: 2
+  visionMask:
+    serializedVersion: 2
+    m_Bits: 192
+  eyeOffset: {x: 0, y: 0.3}
+  windUpTime: 0.3
+  hitboxTime: 1
+  cooldownTime: 0.7
+  hitboxPrefab: {fileID: 8929632452094212925, guid: 28b977ede36c3fb4484a6dd2f3994def, type: 3}
   Player: {fileID: 0}
+  spriteRenderer: {fileID: 1189042227}
 --- !u!114 &1189042219
 MonoBehaviour:
   m_ObjectHideFlags: 0
