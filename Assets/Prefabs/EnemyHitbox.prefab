@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3300048487819867342}
   - component: {fileID: 1877639023738969873}
   - component: {fileID: 4529302976046949662}
-  - component: {fileID: 5032595052743646081}
   m_Layer: 0
   m_Name: EnemyHitbox
   m_TagString: Untagged
@@ -69,7 +68,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!114 &4529302976046949662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,16 +81,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124d2ec30c516f1419abb852648a8a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5032595052743646081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8929632452094212925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34cdd56749ae35949930319e259e8293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
