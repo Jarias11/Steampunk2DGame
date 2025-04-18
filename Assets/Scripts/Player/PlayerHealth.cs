@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     private int currentHealth;
     public bool isDead;
@@ -15,10 +15,10 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H)) Damage(10);
+        if (Input.GetKeyDown(KeyCode.H)) TakeDamage(10);
         if (Input.GetKeyDown(KeyCode.J)) Heal(5);
     }
-    public void Damage(int damageAmount)
+    public void TakeDamage(int damageAmount)
     {
         Debug.Log("Current Health: " + currentHealth);
         currentHealth -= damageAmount;
