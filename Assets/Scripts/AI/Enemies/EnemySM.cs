@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(EnemyDataProvider))]
 public class EnemySM : MonoBehaviour
 {
     [Header("Movement")]
@@ -10,7 +12,7 @@ public class EnemySM : MonoBehaviour
 
     [Header("Vision")]
     public LayerMask visionMask;
-    public UnityEngine.Vector2 eyeOffset = new Vector2(0f,0.3f);
+    public UnityEngine.Vector2 eyeOffset = new Vector2(0f, 0.3f);
 
 
     [Header("Combat")]
@@ -20,14 +22,15 @@ public class EnemySM : MonoBehaviour
     public GameObject hitboxPrefab;
 
     //Runtime variables
-    
+
     public NavMeshAgent Agent { get; private set; }
     [HideInInspector] public Transform Player;
     public SpriteRenderer spriteRenderer;
-    
+
     public UnityEngine.Vector3 spawnPos { get; private set; }
     public UnityEngine.Vector3 lastSeenPlayerPos { get; private set; }
-    
+    public EnemyDataProvider Data { get; private set; }
+
     private EnemyBase currentState;
 
     private void Awake()
@@ -35,7 +38,10 @@ public class EnemySM : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         Agent = GetComponent<NavMeshAgent>();
         spawnPos = transform.position;
-        
+        Data = GetComponent<EnemyDataProvider>();
+        if (Data == null)
+            Debug.LogError("EnemyDataProvider not found on enemy!");
+
     }
     private void Start()
     {
@@ -76,33 +82,30 @@ public class EnemySM : MonoBehaviour
             spriteRenderer.flipX = false;  // Facing left
     }
 
-    public bool canSeePlayer(){
-        if(Player==null) return false;
+    public bool canSeePlayer()
+    {
+        if (Player == null) return false;
         Vector2 toPlayer = Player.position - transform.position;
         float distSq = toPlayer.sqrMagnitude;
         float maxSq = chaseRange * chaseRange;
 
-        if(distSq > maxSq) return false;
+        if (distSq > maxSq) return false;
 
 
-        Vector2 origin = (Vector2)transform.position + eyeOffset; 
+        Vector2 origin = (Vector2)transform.position + eyeOffset;
         Vector2 dir = toPlayer.normalized;
 
         RaycastHit2D hit = Physics2D.Raycast(
-            origin,dir,chaseRange, visionMask
+            origin, dir, chaseRange, visionMask
         );
         return hit && hit.collider.CompareTag("Player");
     }
 
-    public void LostPlayer(Vector3 lastPos){
+    public void LostPlayer(Vector3 lastPos)
+    {
         lastSeenPlayerPos = lastPos;
         SwitchState(new EnemySearch(lastSeenPlayerPos));
 
     }
-
-
-
-
-
 
 }

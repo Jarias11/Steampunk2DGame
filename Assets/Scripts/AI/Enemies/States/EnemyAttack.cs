@@ -3,41 +3,65 @@ using UnityEngine;
 public class EnemyAttack : EnemyBase
 {
     private readonly bool facingRight;
-    private EnemyHitbox hitbox;
+    private HitBox hitbox;
     private float timer;
 
-    public EnemyAttack(bool facingRight){
+    private EnemyStats enemyStats;
+    private WeaponStats weaponStats;
+
+    public EnemyAttack(bool facingRight)
+    {
         this.facingRight = facingRight;
     }
-    public override void EnterState(EnemySM enemy){
+
+    public override void EnterState(EnemySM enemy)
+    {
         enemy.Agent.isStopped = true;
 
+        // Setup direction and spawn position
         Vector2 forward = facingRight ? Vector2.right : Vector2.left;
         float offset = enemy.transform.localScale.x * 0.5f;
         Vector2 spawnPos = (Vector2)enemy.transform.position + forward * offset;
 
-        GameObject go = Object.Instantiate(
-            enemy.hitboxPrefab,spawnPos,Quaternion.identity
-        );
-        hitbox = go.GetComponent<EnemyHitbox>();
-        hitbox.Init(this, enemy.hitboxTime);
+        // Create hitbox
+        GameObject go = Object.Instantiate(enemy.hitboxPrefab, spawnPos, Quaternion.identity);
+
+        // Get enemy stats and weapon from the state machine or another component
+        enemyStats = enemy.GetComponent<EnemyDataProvider>()?.Stats;
+        weaponStats = enemy.GetComponent<EnemyDataProvider>()?.Weapon;
+
+        hitbox = go.GetComponent<HitBox>();
+        if (hitbox != null && enemyStats != null && weaponStats != null)
+        {
+            hitbox.Init(enemyStats, weaponStats, enemy.hitboxTime);
+        }
+        else
+        {
+            Debug.LogWarning("Missing hitbox or stats on enemy attack!");
+        }
 
         timer = enemy.hitboxTime;
     }
 
-    public override void UpdateState(EnemySM enemy){
+    public override void UpdateState(EnemySM enemy)
+    {
         timer -= Time.deltaTime;
-        if(timer <= 0f)
+        if (timer <= 0f)
+        {
             EndAttack(enemy);
-    }
-    public override void ExitState(EnemySM enemy){
-        if(hitbox != null) Object.Destroy(hitbox.gameObject);
-    }
-    public void OnHitboxEnd(){
-        timer = 0f;
-    }
-    private void EndAttack(EnemySM enemy){
-        enemy.SwitchState(new EnemyCooldown());
+        }
     }
 
+    public override void ExitState(EnemySM enemy)
+    {
+        if (hitbox != null)
+        {
+            Object.Destroy(hitbox.gameObject);
+        }
+    }
+
+    private void EndAttack(EnemySM enemy)
+    {
+        enemy.SwitchState(new EnemyCooldown());
+    }
 }
