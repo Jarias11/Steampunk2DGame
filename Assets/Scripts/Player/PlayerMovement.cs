@@ -2,6 +2,7 @@ using UnityEditor.Build;
 using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,11 +19,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
+    private Vector2 lastMoveDir = Vector2.down;
+
     private Vector2 dashDirection;
     private float dashTimeRemaining;
     private float cooldownRemaining;
     private bool isDashing;
     private bool isSprinting;
+    private bool isAttacking;
 
     private void Awake()
     {
@@ -40,10 +44,34 @@ public class PlayerMovement : MonoBehaviour
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         ).normalized;
-        animator.SetFloat("MoveX", movement.x);
-        animator.SetFloat("MoveY", movement.y);
+        
+        // Pick dominant axis for animation direction
+float moveX = movement.x;
+float moveY = movement.y;
+
+if (movement != Vector2.zero){
+    if (Mathf.Abs(moveX) > Mathf.Abs(moveY)){
+        moveY = 0;
+        moveX = Mathf.Sign(moveX);
+    }
+    else{
+        moveX = 0;
+        moveY = Mathf.Sign(moveY);
+    }
+}
+if (movement != Vector2.zero && !isAttacking)
+    lastMoveDir = movement;
+
+animator.SetFloat("MoveX", moveX);
+animator.SetFloat("MoveY", moveY);
+
+
+
+
+
         animator.SetFloat("Speed", movement.sqrMagnitude);
         isSprinting = !isDashing && Input.GetKey(KeyCode.LeftShift);
+    
 
 
 
@@ -62,6 +90,9 @@ public class PlayerMovement : MonoBehaviour
         {
             cooldownRemaining -= Time.deltaTime;
         }
+        if(!isAttacking && Input.GetKeyDown(KeyCode.Mouse0) ){
+            StartCoroutine(AttackRoutine());
+        }
 
 
 
@@ -79,9 +110,11 @@ public class PlayerMovement : MonoBehaviour
                              isSprinting ? sprintSpeed :
                                            walkSpeed;
         // Calculate displacement
-        displacement = isDashing
+        displacement = isAttacking
+            ? Vector2.zero // freeze movement during attack
+            : (isDashing
             ? dashDirection * currentSpeed * Time.fixedDeltaTime
-            : movement * currentSpeed * Time.fixedDeltaTime;
+            : movement * currentSpeed * Time.fixedDeltaTime);
 
         rb.MovePosition(rb.position + displacement);
     }
@@ -100,4 +133,15 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
         // GetComponent<Collider2D>().enabled = true;   // end of i‑frames
     }
+    private IEnumerator AttackRoutine()
+{
+    isAttacking = true;
+    animator.SetBool("isAttacking", isAttacking);
+
+    yield return new WaitForSeconds(0.4f); // match attack animation length
+
+    isAttacking = false;
+
+    animator.SetBool("isAttacking", isAttacking);
+}
 }

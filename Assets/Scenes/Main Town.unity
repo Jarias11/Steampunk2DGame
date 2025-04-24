@@ -11710,6 +11710,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1973435000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4140439138210089525, guid: e98c24b2d5fca134ca800923de1499a3, type: 3}
+  m_PrefabInstance: {fileID: 3903850366337709784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1981094424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12136,7 +12141,7 @@ PrefabInstance:
     - target: {fileID: 6386334715368726232, guid: 9e257c51299ef174db37171baa89e530, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1973435000}
     - target: {fileID: 8947650146701397556, guid: 9e257c51299ef174db37171baa89e530, type: 3}
       propertyPath: m_Name
       value: CinemachineCamera
