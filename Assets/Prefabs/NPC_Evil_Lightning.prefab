@@ -189,9 +189,9 @@ GameObject:
   - component: {fileID: 5109227705270141603}
   - component: {fileID: 5033730428936596052}
   - component: {fileID: 4987316087542821009}
-  - component: {fileID: 6550509277586067960}
   - component: {fileID: 3287857572296649751}
   - component: {fileID: 6235369180957791427}
+  - component: {fileID: 7101147699199557897}
   m_Layer: 0
   m_Name: NPC_Evil_Lightning
   m_TagString: Untagged
@@ -347,19 +347,6 @@ MonoBehaviour:
   hitboxPrefab: {fileID: 8929632452094212925, guid: 28b977ede36c3fb4484a6dd2f3994def, type: 3}
   Player: {fileID: 0}
   spriteRenderer: {fileID: 3263766507035650939}
---- !u!114 &6550509277586067960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991793152841625220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34cdd56749ae35949930319e259e8293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
 --- !u!195 &3287857572296649751
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -409,6 +396,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7101147699199557897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991793152841625220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a7d7a56f781c6438e2e10b445f706f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &8785369507751857531
 GameObject:
   m_ObjectHideFlags: 0
