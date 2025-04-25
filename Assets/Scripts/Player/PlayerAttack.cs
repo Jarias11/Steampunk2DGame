@@ -1,33 +1,47 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header("Hitbox Settings")]
     [SerializeField] private GameObject hitboxPrefab;
     [SerializeField] private float hitboxDuration = 0.10f;
-    [SerializeField] private Transform hitboxSpawn;
-    
-    //temp
+    [SerializeField] public Transform hitboxSpawn;
+
+    [Header("Weapon Setup")]
     [SerializeField] private WeaponStats currentWeapon;
-    [SerializeField] private KeyCode attackKey = KeyCode.Mouse0;
 
     private PlayerStats playerStats;
-    //private WeaponStats currentWeapon;
 
     private void Awake()
     {
-        playerStats = GetComponent<PlayerStats>();
-        ///currentWeapon = GetComponent<Inventory>().equppiedWeapon;
+
     }
-    private void Update()
+
+    /// <summary>
+    /// Spawns the attack hitbox. Called during attack animation window.
+    /// </summary>
+    public void PerformAttack()
     {
-        if (Input.GetKeyDown(attackKey))
-            SpawnHitbox();
-        Debug.Log("Player Died!");
-    }
-    private void SpawnHitbox()
-    {
+        if (hitboxPrefab == null || hitboxSpawn == null || currentWeapon == null)
+        {
+            Debug.LogWarning("Missing hitbox prefab, spawn transform, or weapon.");
+            return;
+        }
+
         GameObject go = Instantiate(hitboxPrefab, hitboxSpawn.position, hitboxSpawn.rotation);
-        go.GetComponent<HitBox>().Init(playerStats, currentWeapon, hitboxDuration);
+        HitBox hb = go.GetComponent<HitBox>();
+
+        if (hb != null)
+        {
+            hb.Init(playerStats, currentWeapon, hitboxDuration);
+        }
+    }
+
+    /// <summary>
+    /// Used for updating the equipped weapon at runtime (optional).
+    /// </summary>
+    public void SetWeapon(WeaponStats newWeapon)
+    {
+        currentWeapon = newWeapon;
     }
 }

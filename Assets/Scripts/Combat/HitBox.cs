@@ -51,4 +51,9 @@ public class HitBox : MonoBehaviour
         // Optional: destroy hitbox on first contact
         // Destroy(gameObject);
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, Vector3.one * 0.5f);
+    }
 }

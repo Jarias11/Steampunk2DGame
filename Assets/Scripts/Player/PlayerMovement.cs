@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    private CameraZoomController zoomController;
     private Vector2 movement;
     private Vector2 lastMoveDir = Vector2.down;
 
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        zoomController = FindAnyObjectByType<CameraZoomController>();
     }
 
     void Start()
@@ -44,34 +46,37 @@ public class PlayerMovement : MonoBehaviour
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         ).normalized;
-        
+
         // Pick dominant axis for animation direction
-float moveX = movement.x;
-float moveY = movement.y;
+        float moveX = movement.x;
+        float moveY = movement.y;
 
-if (movement != Vector2.zero){
-    if (Mathf.Abs(moveX) > Mathf.Abs(moveY)){
-        moveY = 0;
-        moveX = Mathf.Sign(moveX);
-    }
-    else{
-        moveX = 0;
-        moveY = Mathf.Sign(moveY);
-    }
-}
-if (movement != Vector2.zero && !isAttacking)
-    lastMoveDir = movement;
+        if (movement != Vector2.zero)
+        {
+            if (Mathf.Abs(moveX) > Mathf.Abs(moveY))
+            {
+                moveY = 0;
+                moveX = Mathf.Sign(moveX);
+            }
+            else
+            {
+                moveX = 0;
+                moveY = Mathf.Sign(moveY);
+            }
+        }
+        if (movement != Vector2.zero && !isAttacking)
+            lastMoveDir = movement;
 
-animator.SetFloat("MoveX", moveX);
-animator.SetFloat("MoveY", moveY);
+        animator.SetFloat("MoveX", moveX);
+        animator.SetFloat("MoveY", moveY);
 
 
-
+        zoomController.IsSprinting = isSprinting;
 
 
         animator.SetFloat("Speed", movement.sqrMagnitude);
         isSprinting = !isDashing && Input.GetKey(KeyCode.LeftShift);
-    
+
 
 
 
@@ -90,7 +95,8 @@ animator.SetFloat("MoveY", moveY);
         {
             cooldownRemaining -= Time.deltaTime;
         }
-        if(!isAttacking && Input.GetKeyDown(KeyCode.Mouse0) ){
+        if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0))
+        {
             StartCoroutine(AttackRoutine());
         }
 
@@ -134,14 +140,20 @@ animator.SetFloat("MoveY", moveY);
         // GetComponent<Collider2D>().enabled = true;   // end of i‑frames
     }
     private IEnumerator AttackRoutine()
-{
-    isAttacking = true;
-    animator.SetBool("isAttacking", isAttacking);
+    {
+        isAttacking = true;
+        animator.SetBool("isAttacking", true);
 
-    yield return new WaitForSeconds(0.4f); // match attack animation length
+        Vector2 attackDir = lastMoveDir.normalized;
+        Transform spawn = GetComponent<PlayerAttack>().hitboxSpawn;
+        spawn.localPosition = attackDir * 0.5f; // you can tweak 0.5f for reach
 
-    isAttacking = false;
+        // Optionally spawn hitbox early or with delay
+        GetComponent<PlayerAttack>()?.PerformAttack();
 
-    animator.SetBool("isAttacking", isAttacking);
-}
+        yield return new WaitForSeconds(0.4f); // Match animation length
+
+        isAttacking = false;
+        animator.SetBool("isAttacking", false);
+    }
 }
