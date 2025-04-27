@@ -28,9 +28,17 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true; //Enables raycasts
-        canvasGroup.alpha = 1.0f;
+        canvasGroup.alpha = 1.0f; //No longer transparent
 
-        slot dropSlot = eventData.pointerEnter?.GetComponent<slot>();
+        slot dropSlot = eventData.pointerEnter?.GetComponent<slot>(); //Slot where item dropped
+        if(dropSlot == null)
+        {
+            GameObject dropItem = eventData.pointerEnter;
+            if (dropItem != null)
+            {
+                dropSlot = dropItem.GetComponentInParent<slot>();
+            }
+        }
         slot originalSlot = originalParent.GetComponent<slot>();
 
         if (dropSlot != null)

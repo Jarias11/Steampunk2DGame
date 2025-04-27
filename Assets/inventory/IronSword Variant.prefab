@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9145431637605371
+--- !u!1001 &7332602933862297070
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 867781239562965925, guid: 01bfe12dc3b5b444699c11c6b95ac8e1, type: 3}
       propertyPath: m_Name
-      value: Silverthorn Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 867781239562965925, guid: 01bfe12dc3b5b444699c11c6b95ac8e1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: IronSword Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6870143065013853152, guid: 01bfe12dc3b5b444699c11c6b95ac8e1, type: 3}
       propertyPath: m_Sprite
