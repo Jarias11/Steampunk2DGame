@@ -3,7 +3,7 @@ using System;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private PlayerStats stats; 
+    [SerializeField] private PlayerStats stats;
     private int currentHealth;
     public bool isDead;
     [SerializeField] private int startingHealth;
@@ -41,6 +41,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         isDead = true;
         Debug.Log("Player Died!");
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public void SetCurrentHealth(int health)
+    {
+        currentHealth = Mathf.Clamp(health, 0, stats.maxHealth);
+        UIController.Instance.UpdateHealth(currentHealth, stats.maxHealth);
     }
 }
 

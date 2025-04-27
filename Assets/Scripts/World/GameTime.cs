@@ -129,5 +129,49 @@ public class GameTime : MonoBehaviour
         globalLight.color = Color.Lerp(globalLight.color, targetColor, Time.deltaTime * 2f);
     }
 
+    public GameTimeData GetTimeData()
+    {
+        return new GameTimeData
+        {
+            minute = this.minute,
+            hour = this.hour,
+            day = this.day,
+            week = this.week,
+            month = this.month,
+            year = this.year,
+            currentSeason = this.currentSeason
+        };
+    }
 
+    public void SetTimeData(GameTimeData data)
+    {
+        this.minute = data.minute;
+        this.hour = data.hour;
+        this.day = data.day;
+        this.week = data.week;
+        this.month = data.month;
+        this.year = data.year;
+        this.currentSeason = data.currentSeason;
+
+        // Optional: update lighting immediately after loading
+        UpdateLighting();
+    }
+
+
+}
+
+
+
+
+
+[System.Serializable]
+public class GameTimeData
+{
+    public int minute;
+    public int hour;
+    public int day;
+    public int week;
+    public int month;
+    public int year;
+    public GameTime.Season currentSeason;
 }
