@@ -20,3 +20,11 @@
 *.apk
 *.unitypackage
 .DS_Store
+# Ignore local editor settings
+UserSettings/
+*.dwlt
+*.asset
+
+# (Optional) Also ignore VS Code or Rider specific settings
+.vscode/
+.idea/
