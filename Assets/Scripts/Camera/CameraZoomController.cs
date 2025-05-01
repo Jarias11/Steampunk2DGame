@@ -3,8 +3,7 @@ using NUnit.Framework;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class CameraZoomController : MonoBehaviour
-{
+public class CameraZoomController : MonoBehaviour {
     [SerializeField] private CinemachineCamera cinemachineCamera;
     [SerializeField] private float zoomMultiplier = 1.15f;
     [SerializeField] private float zoomSpeed = 5f;
@@ -14,8 +13,7 @@ public class CameraZoomController : MonoBehaviour
 
     public bool IsSprinting { get; set; }
 
-    private void Start()
-    {
+    private void Start() {
         if (cinemachineCamera == null)
             cinemachineCamera = FindFirstObjectByType<CinemachineCamera>();
 
@@ -23,8 +21,7 @@ public class CameraZoomController : MonoBehaviour
         targetZoom = defaultZoom;
 
     }
-    private void LateUpdate()
-    {
+    private void LateUpdate() {
         targetZoom = IsSprinting ? defaultZoom / zoomMultiplier : defaultZoom;
         var lens = cinemachineCamera.Lens;
         lens.OrthographicSize = Mathf.Lerp(lens.OrthographicSize, targetZoom, Time.deltaTime * zoomSpeed);

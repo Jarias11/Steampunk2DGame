@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
-{
+public class PlayerAttack : MonoBehaviour {
     [Header("Hitbox Settings")]
     [SerializeField] private GameObject hitboxPrefab;
     [SerializeField] private float hitboxDuration = 0.10f;
@@ -12,18 +11,15 @@ public class PlayerAttack : MonoBehaviour
 
     private PlayerStats playerStats;
 
-    private void Awake()
-    {
+    private void Awake() {
 
     }
 
     /// <summary>
     /// Spawns the attack hitbox. Called during attack animation window.
     /// </summary>
-    public void PerformAttack()
-    {
-        if (hitboxPrefab == null || hitboxSpawn == null || currentWeapon == null)
-        {
+    public void PerformAttack() {
+        if (hitboxPrefab == null || hitboxSpawn == null || currentWeapon == null) {
             Debug.LogWarning("Missing hitbox prefab, spawn transform, or weapon.");
             return;
         }
@@ -31,8 +27,7 @@ public class PlayerAttack : MonoBehaviour
         GameObject go = Instantiate(hitboxPrefab, hitboxSpawn.position, hitboxSpawn.rotation);
         HitBox hb = go.GetComponent<HitBox>();
 
-        if (hb != null)
-        {
+        if (hb != null) {
             hb.Init(playerStats, currentWeapon, hitboxDuration);
         }
     }
@@ -40,8 +35,7 @@ public class PlayerAttack : MonoBehaviour
     /// <summary>
     /// Used for updating the equipped weapon at runtime (optional).
     /// </summary>
-    public void SetWeapon(WeaponStats newWeapon)
-    {
+    public void SetWeapon(WeaponStats newWeapon) {
         currentWeapon = newWeapon;
     }
 }

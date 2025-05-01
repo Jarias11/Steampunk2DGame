@@ -2,39 +2,33 @@ using UnityEngine;
 using System.IO;
 
 [System.Serializable]
-public class SaveData
-{
+public class SaveData {
     public float[] playerPosition;
     public int playerHealth;
     public GameTimeData gameTimeData;
 }
 
 
-public class SaveManager : MonoBehaviour
-{
+public class SaveManager : MonoBehaviour {
     public static SaveManager Instance;
     private string savePath;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
+    private void Awake() {
+        if (Instance == null) {
             Instance = this;
             savePath = Application.persistentDataPath + "/save.json";
         }
         else Destroy(gameObject);
 
     }
-    void Update()
-    {
+    void Update() {
         if (Input.GetKeyDown(KeyCode.P))
             SaveManager.Instance.SaveGame(FindFirstObjectByType<PlayerMovement>(), FindFirstObjectByType<PlayerHealth>());
 
         if (Input.GetKeyDown(KeyCode.O))
             SaveManager.Instance.LoadGame(FindFirstObjectByType<PlayerMovement>(), FindFirstObjectByType<PlayerHealth>());
     }
-    public void SaveGame(PlayerMovement pm, PlayerHealth ph)
-    {
+    public void SaveGame(PlayerMovement pm, PlayerHealth ph) {
         SaveData data = new SaveData();
         Vector2 pos = pm.transform.position;
         data.playerPosition = new float[] { pos.x, pos.y, };
@@ -46,10 +40,8 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log("Game Saved to: " + savePath);
     }
-    public void LoadGame(PlayerMovement playerMovement, PlayerHealth playerHealth)
-    {
-        if (!File.Exists(savePath))
-        {
+    public void LoadGame(PlayerMovement playerMovement, PlayerHealth playerHealth) {
+        if (!File.Exists(savePath)) {
             Debug.LogWarning("No save file found.");
             return;
         }

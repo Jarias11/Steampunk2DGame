@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public static class DamageResolver
-{
+public static class DamageResolver {
     /// <summary>
     /// Calculates final damage based on attacker stats, weapon, and defender armor.
     /// </summary>
@@ -9,10 +8,8 @@ public static class DamageResolver
         PlayerStats attackerStats,
         WeaponStats weapon,
         ArmorStats defenderArmor = null
-    )
-    {
-        if (attackerStats == null || weapon == null)
-        {
+    ) {
+        if (attackerStats == null || weapon == null) {
             Debug.LogWarning("Missing attacker or weapon data in DamageResolver.");
             return 0;
         }
@@ -22,20 +19,17 @@ public static class DamageResolver
 
         // 2. Critical Hit Chance
         bool isCrit = Random.value < attackerStats.critChance;
-        if (isCrit)
-        {
+        if (isCrit) {
             float totalCritMultiplier = attackerStats.critMultiplier + weapon.critBonus;
             baseDamage *= totalCritMultiplier;
             Debug.Log("💥 Critical Hit!");
         }
 
         // 3. Armor Reduction (if provided)
-        if (defenderArmor != null)
-        {
+        if (defenderArmor != null) {
             // Optional: check for resistances
             if (defenderArmor.resistTypes != null &&
-                System.Array.Exists(defenderArmor.resistTypes, t => t == weapon.damageType))
-            {
+                System.Array.Exists(defenderArmor.resistTypes, t => t == weapon.damageType)) {
                 Debug.Log("🛡️ Damage resisted!");
                 baseDamage *= 0.5f; // half damage from resisted types
             }

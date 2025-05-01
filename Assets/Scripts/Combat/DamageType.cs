@@ -1,5 +1,4 @@
-public enum DamageType
-{
+public enum DamageType {
     Physical,
     Fire,
     Ice,

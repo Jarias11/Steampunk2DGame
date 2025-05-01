@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public static GameManager Instance;
 
     [Header("Defaults")]
@@ -16,15 +15,12 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     public SaveManager saveManager;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
+    private void Awake() {
+        if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
+        else {
             Destroy(gameObject);
         }
     }

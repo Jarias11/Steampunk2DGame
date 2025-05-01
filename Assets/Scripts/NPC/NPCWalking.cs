@@ -2,8 +2,7 @@ using System.Numerics;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class NPCWalking : MonoBehaviour
-{
+public class NPCWalking : MonoBehaviour {
     public float moveSpeed = 1f;
     public float walkDistance = 5;
     public float waitTime = 1f;
@@ -26,44 +25,36 @@ public class NPCWalking : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    void Start()
-    {
+    void Start() {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         walkStartPos = transform.position;
         SetTarget();
     }
-    void Update()
-    {
-        if (isWalking)
-        {
+    void Update() {
+        if (isWalking) {
             // ✅ Only move and animate when walking
             transform.position = UnityEngine.Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             AnimateDirection(targetPosition - transform.position);
 
-            if (UnityEngine.Vector3.Distance(transform.position, targetPosition) < 0.01f)
-            {
+            if (UnityEngine.Vector3.Distance(transform.position, targetPosition) < 0.01f) {
                 isWalking = false;
                 waitTimer = waitTime;
                 ResetAnimationBools();
             }
         }
-        else
-        {
+        else {
             // ✅ Wait between moves
             waitTimer -= Time.deltaTime;
-            if (waitTimer <= 0f)
-            {
+            if (waitTimer <= 0f) {
                 isWalking = true;
 
-                if (goingOut)
-                {
+                if (goingOut) {
                     // Come back to start
                     goingOut = false;
                     targetPosition = walkStartPos;
                 }
-                else
-                {
+                else {
                     // Start new direction
                     currentDirection = (currentDirection + 1) % directions.Length;
                     walkStartPos = transform.position; // update start
@@ -73,20 +64,17 @@ public class NPCWalking : MonoBehaviour
             }
         }
     }
-    void SetTarget()
-    {
+    void SetTarget() {
         UnityEngine.Vector3 direction = directions[currentDirection];
         targetPosition = walkStartPos + direction * walkDistance;
     }
 
-    void AnimateDirection(UnityEngine.Vector3 moveVector)
-    {
+    void AnimateDirection(UnityEngine.Vector3 moveVector) {
         ResetAnimationBools();
 
         UnityEngine.Vector3 dir = moveVector.normalized;
 
-        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
-        {
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y)) {
             // Horizontal
             if (dir.x > 0)
                 animator.SetBool("isWalkingRight", true);
@@ -94,8 +82,7 @@ public class NPCWalking : MonoBehaviour
                 animator.SetBool("isWalkingLeft", true);
 
         }
-        else
-        {
+        else {
             // Vertical
             if (dir.y > 0)
                 animator.SetBool("isWalkingUp", true);
@@ -104,8 +91,7 @@ public class NPCWalking : MonoBehaviour
         }
     }
 
-    void ResetAnimationBools()
-    {
+    void ResetAnimationBools() {
         animator.SetBool("isWalkingDown", false);
         animator.SetBool("isWalkingLeft", false);
         animator.SetBool("isWalkingUp", false);

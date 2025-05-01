@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class EnemyDataProvider : MonoBehaviour
-{
+public class EnemyDataProvider : MonoBehaviour {
     [SerializeField] private EnemyStats stats;
     [SerializeField] private WeaponStats weapon;
 

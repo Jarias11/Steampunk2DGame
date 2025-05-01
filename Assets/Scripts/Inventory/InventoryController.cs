@@ -6,8 +6,7 @@ using System.Linq;
 /// <summary>
 /// Handles displaying the inventory visually (slots, icons, counts).
 /// </summary>
-public class InventoryController : MonoBehaviour
-{
+public class InventoryController : MonoBehaviour {
     public Inventory inventory;
     public GameObject inventoryPanel;
     public GameObject slotPrefab;
@@ -15,18 +14,16 @@ public class InventoryController : MonoBehaviour
 
     private Slot[] slots;
 
-    private void Start()
-    {
+    private void Start() {
         inventory = GameManager.Instance.playerInventory;
         inventory.InventoryChanged += UpdateInventoryUI;
 
-     
+
 
         slots = new Slot[slotCount];
 
         // Create slots
-        for (int i = 0; i < slotCount; i++)
-        {
+        for (int i = 0; i < slotCount; i++) {
             GameObject slotGO = Instantiate(slotPrefab, inventoryPanel.transform);
             Slot slot = slotGO.GetComponent<Slot>();
             slots[i] = slot;
@@ -35,19 +32,15 @@ public class InventoryController : MonoBehaviour
         UpdateInventoryUI();
     }
 
-    private void UpdateInventoryUI()
-    {
+    private void UpdateInventoryUI() {
         List<Item> items = inventory.GetAllItems();
-        for (int i = 0; i < slots.Length; i++)
-    {
-        if (i < items.Count)
-        {
-            slots[i].SetItem(items[i]);
+        for (int i = 0; i < slots.Length; i++) {
+            if (i < items.Count) {
+                slots[i].SetItem(items[i]);
+            }
+            else {
+                slots[i].ClearSlot();
+            }
         }
-        else
-        {
-            slots[i].ClearSlot();
-        }
-    }
     }
 }

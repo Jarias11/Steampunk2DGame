@@ -1,8 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewWeapon", menuName = "Stats/Weapon")]
-public class WeaponStats : ScriptableObject
-{
+public class WeaponStats : ScriptableObject {
     public string weaponName;
 
     [Header("Damage")]

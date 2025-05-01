@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public abstract class Item : ScriptableObject
-{
+public abstract class Item : ScriptableObject {
     public string itemName;
     [TextArea] public string description;
     public Sprite icon;
@@ -13,8 +12,7 @@ public abstract class Item : ScriptableObject
 
     public abstract void Use(); // Every item must define how it is used
 }
-public enum ItemType
-{
+public enum ItemType {
     Weapon,
     Armor,
     Consumable,
@@ -23,8 +21,7 @@ public enum ItemType
     QuestItem
 }
 
-public enum ItemRarity
-{
+public enum ItemRarity {
     Common,
     Uncommon,
     Rare,

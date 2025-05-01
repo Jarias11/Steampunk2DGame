@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class ArmorHolder : MonoBehaviour
-{
+public class ArmorHolder : MonoBehaviour {
     [SerializeField] private ArmorStats armorStats;
 
     /// <summary>
@@ -10,8 +9,7 @@ public class ArmorHolder : MonoBehaviour
     public ArmorStats Stats => armorStats;
 
     // Optional: expose a setter for dynamic equipping
-    public void SetArmor(ArmorStats newArmor)
-    {
+    public void SetArmor(ArmorStats newArmor) {
         armorStats = newArmor;
     }
 }

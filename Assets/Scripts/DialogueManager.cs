@@ -1,8 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
-{
+public class DialogueManager : MonoBehaviour {
     public static DialogueManager Instance;
     private float inputDelay = 0.2f;
     private float timeSinceStart = 0f;
@@ -14,26 +13,21 @@ public class DialogueManager : MonoBehaviour
     private int currentIndex = 0;
     private bool isTalking = false;
 
-    void Awake()
-    {
+    void Awake() {
         Instance = this;
     }
 
-    void Update()
-    {
-        if (isTalking)
-        {
+    void Update() {
+        if (isTalking) {
             timeSinceStart += Time.deltaTime;
 
-            if (timeSinceStart >= inputDelay && Input.GetKeyDown(KeyCode.E))
-            {
+            if (timeSinceStart >= inputDelay && Input.GetKeyDown(KeyCode.E)) {
                 DisplayNextLine();
             }
         }
     }
 
-    public void StartDialogue(string[] lines)
-    {
+    public void StartDialogue(string[] lines) {
         if (lines == null || lines.Length == 0) return;
         currentLines = lines;
         timeSinceStart = 0f;
@@ -44,28 +38,23 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = currentLines[currentIndex];
     }
 
-    void DisplayNextLine()
-    {
+    void DisplayNextLine() {
         currentIndex++;
 
-        if (currentIndex >= currentLines.Length)
-        {
+        if (currentIndex >= currentLines.Length) {
             EndDialogue();
         }
-        else
-        {
+        else {
             dialogueText.text = currentLines[currentIndex];
         }
     }
 
-    void EndDialogue()
-    {
+    void EndDialogue() {
         isTalking = false;
         dialogueBox.SetActive(false);
     }
 
-    public bool IsTalking()
-    {
+    public bool IsTalking() {
         return isTalking;
     }
 }

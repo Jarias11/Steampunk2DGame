@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     [Header("Walk")]
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] public float sprintSpeed = 6f;
@@ -29,19 +28,16 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprinting;
     private bool isAttacking;
 
-    private void Awake()
-    {
+    private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         zoomController = FindAnyObjectByType<CameraZoomController>();
     }
 
-    void Start()
-    {
+    void Start() {
     }
 
-    void Update()
-    {
+    void Update() {
         movement = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
@@ -51,15 +47,12 @@ public class PlayerMovement : MonoBehaviour
         float moveX = movement.x;
         float moveY = movement.y;
 
-        if (movement != Vector2.zero)
-        {
-            if (Mathf.Abs(moveX) > Mathf.Abs(moveY))
-            {
+        if (movement != Vector2.zero) {
+            if (Mathf.Abs(moveX) > Mathf.Abs(moveY)) {
                 moveY = 0;
                 moveX = Mathf.Sign(moveX);
             }
-            else
-            {
+            else {
                 moveX = 0;
                 moveY = Mathf.Sign(moveY);
             }
@@ -81,22 +74,18 @@ public class PlayerMovement : MonoBehaviour
 
 
         //If not currently dashing, cooldown is 0 or less, space is pressed, and theres some movement, then start dash
-        if (!isDashing && cooldownRemaining <= 0f && Input.GetKeyDown(KeyCode.Space) && movement != Vector2.zero)
-        {
+        if (!isDashing && cooldownRemaining <= 0f && Input.GetKeyDown(KeyCode.Space) && movement != Vector2.zero) {
             StartDash();
         }
         //Timers
-        if (isDashing)
-        {
+        if (isDashing) {
             dashTimeRemaining -= Time.deltaTime;
             if (dashTimeRemaining <= 0f || !Input.GetKey(KeyCode.Space)) EndDash();
         }
-        else
-        {
+        else {
             cooldownRemaining -= Time.deltaTime;
         }
-        if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0))
-        {
+        if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0)) {
             StartCoroutine(AttackRoutine());
         }
 
@@ -104,8 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         Vector2 displacement;
         // Update Animator bools
         animator.SetBool("IsDashing", isDashing);
@@ -124,8 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + displacement);
     }
-    private void StartDash()
-    {
+    private void StartDash() {
         isDashing = true;
         dashDirection = movement;          // dash *where the stick is pointing*
         dashTimeRemaining = dashDuration;
@@ -134,13 +121,11 @@ public class PlayerMovement : MonoBehaviour
         // OPTIONAL: invincibility frames, trail FX, camera shake, SFX, etc.
         // GetComponent<Collider2D>().enabled = false;  // i‑frames example
     }
-    private void EndDash()
-    {
+    private void EndDash() {
         isDashing = false;
         // GetComponent<Collider2D>().enabled = true;   // end of i‑frames
     }
-    private IEnumerator AttackRoutine()
-    {
+    private IEnumerator AttackRoutine() {
         isAttacking = true;
         animator.SetBool("isAttacking", true);
 

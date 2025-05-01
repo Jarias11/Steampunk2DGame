@@ -3,8 +3,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class GameTime : MonoBehaviour
-{
+public class GameTime : MonoBehaviour {
     public static GameTime Instance;
 
     [Header("Time Settings")]
@@ -33,14 +32,12 @@ public class GameTime : MonoBehaviour
     private Color dawnColor = new Color(1f, 0.65f, 0.4f);    // warm orange
     private Color duskColor = new Color(1f, 0.5f, 0.6f);     // pinkish red
 
-    private void Awake()
-    {
+    private void Awake() {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
-    void Start()
-    {
+    void Start() {
         minute = 0;
         hour = 6;
         day = 1;
@@ -48,24 +45,19 @@ public class GameTime : MonoBehaviour
         year = 1;
         currentSeason = Season.Spring;
     }
-    void Update()
-    {
+    void Update() {
         timer += Time.deltaTime;
-        if (timer > secondsPerMinute)
-        {
+        if (timer > secondsPerMinute) {
             timer = 0;
             AdvanceMinute();
         }
     }
-    void AdvanceMinute()
-    {
+    void AdvanceMinute() {
         minute++;
-        if (minute >= 60)
-        {
+        if (minute >= 60) {
             minute = 0;
             hour++;
-            if (hour >= 24)
-            {
+            if (hour >= 24) {
                 hour = 0;
                 AdvanceDay();
             }
@@ -75,50 +67,41 @@ public class GameTime : MonoBehaviour
         OnTimeChanged?.Invoke(hour, day, month);
 
     }
-    void AdvanceDay()
-    {
+    void AdvanceDay() {
         day++;
         if (day % 7 == 1) week++;
 
-        if (day > 30)
-        {
+        if (day > 30) {
             day = 1;
             month++;
             UpdateSeason();
-            if (month > 12)
-            {
+            if (month > 12) {
                 month = 1;
                 year++;
             }
         }
 
     }
-    public void UpdateSeason()
-    {
+    public void UpdateSeason() {
         Season newSeason = (Season)((month - 1) / 3);
-        if (newSeason != currentSeason)
-        {
+        if (newSeason != currentSeason) {
             currentSeason = newSeason;
             OnSeasonChanged?.Invoke(currentSeason);
         }
     }
-    private void UpdateLighting()
-    {
+    private void UpdateLighting() {
         float targetIntensity = 1f;
         Color targetColor = dayColor;
 
-        if (hour >= 20 || hour < 6)
-        {
+        if (hour >= 20 || hour < 6) {
             targetIntensity = 0.2f;
             targetColor = nightColor;
         }
-        else if (hour >= 18)
-        {
+        else if (hour >= 18) {
             targetIntensity = 0.5f;
             targetColor = duskColor;
         }
-        else if (hour >= 6 && hour < 8)
-        {
+        else if (hour >= 6 && hour < 8) {
             targetIntensity = 0.7f;
             targetColor = dawnColor;
         }
@@ -129,10 +112,8 @@ public class GameTime : MonoBehaviour
         globalLight.color = Color.Lerp(globalLight.color, targetColor, Time.deltaTime * 2f);
     }
 
-    public GameTimeData GetTimeData()
-    {
-        return new GameTimeData
-        {
+    public GameTimeData GetTimeData() {
+        return new GameTimeData {
             minute = this.minute,
             hour = this.hour,
             day = this.day,
@@ -143,8 +124,7 @@ public class GameTime : MonoBehaviour
         };
     }
 
-    public void SetTimeData(GameTimeData data)
-    {
+    public void SetTimeData(GameTimeData data) {
         this.minute = data.minute;
         this.hour = data.hour;
         this.day = data.day;
@@ -165,8 +145,7 @@ public class GameTime : MonoBehaviour
 
 
 [System.Serializable]
-public class GameTimeData
-{
+public class GameTimeData {
     public int minute;
     public int hour;
     public int day;

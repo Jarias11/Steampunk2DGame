@@ -1,8 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewPlayerStats", menuName = "Stats/Player")]
-public class PlayerStats : ScriptableObject
-{
+public class PlayerStats : ScriptableObject {
     [Header("Health & Defense")]
     public int maxHealth = 100;
     public int defense = 10;

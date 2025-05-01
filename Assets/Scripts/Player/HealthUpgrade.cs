@@ -1,6 +1,5 @@
 using UnityEngine;
 
-public class HealthUpgrade
-{
-    
+public class HealthUpgrade {
+
 }

@@ -3,8 +3,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(EnemyDataProvider))]
-public class EnemySM : MonoBehaviour
-{
+public class EnemySM : MonoBehaviour {
     [Header("Movement")]
     public float moveSpeed = 2f;
     public float chaseRange = 5f;
@@ -33,8 +32,7 @@ public class EnemySM : MonoBehaviour
 
     private EnemyBase currentState;
 
-    private void Awake()
-    {
+    private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         Agent = GetComponent<NavMeshAgent>();
         spawnPos = transform.position;
@@ -43,38 +41,31 @@ public class EnemySM : MonoBehaviour
             Debug.LogError("EnemyDataProvider not found on enemy!");
 
     }
-    private void Start()
-    {
+    private void Start() {
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-        {
+        if (playerObj != null) {
             Player = playerObj.transform;
             currentState = new EnemyIdle();  // ← Only switch if player exists
             currentState.EnterState(this);
         }
-        else
-        {
+        else {
             Debug.LogWarning("Player not found. Make sure they are tagged 'Player'.");
         }
     }
 
-    private void Update()
-    {
+    private void Update() {
         currentState?.UpdateState(this);
     }
-    public void SwitchState(EnemyBase newState)
-    {
+    public void SwitchState(EnemyBase newState) {
         currentState?.ExitState(this);
         currentState = newState;
         currentState.EnterState(this);
     }
-    void LateUpdate()
-    {
+    void LateUpdate() {
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
-    public void flip(Vector2 targetPosition)
-    {
+    public void flip(Vector2 targetPosition) {
         Vector2 direction = targetPosition - (Vector2)transform.position;
         if (direction.x > 0.01f)
             spriteRenderer.flipX = true; // Facing right
@@ -82,8 +73,7 @@ public class EnemySM : MonoBehaviour
             spriteRenderer.flipX = false;  // Facing left
     }
 
-    public bool canSeePlayer()
-    {
+    public bool canSeePlayer() {
         if (Player == null) return false;
         Vector2 toPlayer = Player.position - transform.position;
         float distSq = toPlayer.sqrMagnitude;
@@ -101,8 +91,7 @@ public class EnemySM : MonoBehaviour
         return hit && hit.collider.CompareTag("Player");
     }
 
-    public void LostPlayer(Vector3 lastPos)
-    {
+    public void LostPlayer(Vector3 lastPos) {
         lastSeenPlayerPos = lastPos;
         SwitchState(new EnemySearch(lastSeenPlayerPos));
 

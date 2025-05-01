@@ -1,8 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewArmor", menuName = "Stats/Armor")]
-public class ArmorStats : ScriptableObject
-{
+public class ArmorStats : ScriptableObject {
     public string armorName;
 
     [Header("Damage Reduction")]
