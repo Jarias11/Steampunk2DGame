@@ -7,7 +7,16 @@ public class GameManager : MonoBehaviour
     [Header("Defaults")]
     public Sprite defaultNPCPortrait;
 
-    void Awake()
+    [Header("Player References")]
+    public Inventory playerInventory;
+    public PlayerHealth playerHealth;
+    public PlayerAttack playerAttack;
+    public ArmorHolder playerArmorHolder;
+
+    [Header("Managers")]
+    public SaveManager saveManager;
+
+    private void Awake()
     {
         if (Instance == null)
         {
