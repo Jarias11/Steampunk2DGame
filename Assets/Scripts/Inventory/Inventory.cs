@@ -6,64 +6,154 @@ using System.Linq;
 /// Manages the player's actual inventory data: adding, removing, using items.
 /// </summary>
 public class Inventory : MonoBehaviour {
-    public Dictionary<Item, int> itemStacks = new Dictionary<Item, int>();
+
+
+    [System.Serializable]
+    public class InventoryEntry {
+        public Item item;
+        public int count;
+
+        public InventoryEntry(Item item, int count) {
+            this.item = item;
+            this.count = count;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    public List<InventoryEntry> slots = new List<InventoryEntry>();
     public int maxSlots = 30;
 
     public delegate void OnInventoryChanged();
     public event OnInventoryChanged InventoryChanged;
 
-    public void AddItem(Item item) {
-        if (itemStacks.ContainsKey(item)) {
-            if (itemStacks[item] < item.maxStack) {
-                itemStacks[item]++;
-                Debug.Log($"Increased {item.itemName} to x{itemStacks[item]}");
-            }
-            else {
-                Debug.LogWarning($"{item.itemName} is already at max stack size!");
-                return;
+
+
+
+    private void Awake() {
+        // Initialize inventory with empty slots
+        for (int i = 0; i < maxSlots; i++) {
+            slots.Add(new InventoryEntry(null, 0));
+        }
+    }
+
+
+
+    public void AddItem(Item item, int quantity = 1) {
+        // Try to stack first
+        for (int i = 0; i < slots.Count; i++) {
+            if (slots[i].item == item && slots[i].count < item.maxStack) {
+                int spaceLeft = item.maxStack - slots[i].count;
+                int amountToAdd = Mathf.Min(quantity, spaceLeft);
+                slots[i].count += amountToAdd;
+                quantity -= amountToAdd;
+                if (quantity <= 0) {
+                    InventoryChanged?.Invoke();
+                    return;
+                }
             }
         }
-        else {
-            if (itemStacks.Count < maxSlots) {
-                itemStacks.Add(item, 1);
-                Debug.Log($"{item.itemName} added to inventory.");
+
+        // Add to empty slots
+        for (int i = 0; i < slots.Count; i++) {
+            if (slots[i].item == null) {
+                int amountToAdd = Mathf.Min(quantity, item.maxStack);
+                slots[i].item = item;
+                slots[i].count = amountToAdd;
+                quantity -= amountToAdd;
+                if (quantity <= 0) {
+                    InventoryChanged?.Invoke();
+                    return;
+                }
             }
-            else {
-                Debug.LogWarning("Inventory Full!");
-                return;
+        }
+
+        Debug.LogWarning("Inventory is full!");
+        InventoryChanged?.Invoke();
+    }
+
+    public void RemoveItem(int slotIndex, int amount = 1) {
+        if (slotIndex >= 0 && slotIndex < slots.Count) {
+            InventoryEntry slot = slots[slotIndex];
+            if (slot.item != null) {
+                slot.count -= amount;
+                if (slot.count <= 0) {
+                    slot.item = null;
+                    slot.count = 0;
+                }
+
+                InventoryChanged?.Invoke();
             }
         }
     }
 
-    public bool RemoveItem(Item item) {
-        if (itemStacks.ContainsKey(item)) {
-            itemStacks[item]--;
-            if (itemStacks[item] <= 0)
-                itemStacks.Remove(item);
+    public void SetSlot(int index, Item item, int count) {
+        if (index >= 0 && index < slots.Count) {
+            slots[index].item = item;
+            slots[index].count = count;
             InventoryChanged?.Invoke();
-            return true;
         }
-        else
-            return false;
     }
 
-    public void UseItem(Item item) {
-        if (itemStacks.ContainsKey(item)) {
-            item.Use();
-            RemoveItem(item);
-        }
-        else
-            Debug.LogWarning($"{item.itemName} is not in the inventory!");
-    }
-    public int GetItemCount(Item item) {
-        return itemStacks.ContainsKey(item) ? itemStacks[item] : 0;
-    }
-    public List<Item> GetAllItems() {
-        return itemStacks.Keys.ToList();
+    public void SwapSlots(int indexA, int indexB) {
+        if (indexA == indexB || indexA < 0 || indexB < 0 || indexA >= slots.Count || indexB >= slots.Count) return;
+
+        var temp = slots[indexA];
+        slots[indexA] = slots[indexB];
+        slots[indexB] = temp;
+
+        InventoryChanged?.Invoke();
     }
 
-    public void ToggleInventoryUI() {
-        // This will be linked to the UI later
+    public InventoryEntry GetSlot(int index) {
+        return index >= 0 && index < slots.Count ? slots[index] : null;
+    }
+
+
+    public void ForceUpdate() {
+        InventoryChanged?.Invoke();
+    }
+    public List<SavedItemSlot> ToSavedData() {
+        List<SavedItemSlot> saved = new List<SavedItemSlot>();
+        for (int i = 0; i < slots.Count; i++) {
+            var slot = slots[i];
+            if (slot.item != null && slot.count > 0) {
+                saved.Add(new SavedItemSlot {
+                    slotIndex = i,
+                    itemID = slot.item.itemID,
+                    count = slot.count
+                });
+            }
+        }
+        return saved;
+    }
+
+    public void LoadFromSavedData(List<SavedItemSlot> savedSlots) {
+        // Clear current inventory
+        for (int i = 0; i < slots.Count; i++) {
+            slots[i].item = null;
+            slots[i].count = 0;
+        }
+
+        foreach (var saved in savedSlots) {
+            Item item = ItemDatabase.GetItemByID(saved.itemID);
+            if (item != null && saved.slotIndex >= 0 && saved.slotIndex < slots.Count) {
+                slots[saved.slotIndex].item = item;
+                slots[saved.slotIndex].count = saved.count;
+            }
+            else {
+                Debug.LogWarning($"❌ Failed to restore item '{saved.itemID}' at slot {saved.slotIndex}");
+            }
+        }
+
+        InventoryChanged?.Invoke();
     }
 }
 

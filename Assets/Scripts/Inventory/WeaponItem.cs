@@ -14,4 +14,5 @@ public class WeaponItem : Item {
             Debug.LogWarning("PlayerAttack not assigned in GameManager!");
         }
     }
+
 }

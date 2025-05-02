@@ -14,4 +14,5 @@ public class ArmorItem : Item {
             Debug.LogWarning("ArmorHolder not assigned in GameManager!");
         }
     }
+
 }

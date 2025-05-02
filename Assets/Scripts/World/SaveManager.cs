@@ -1,15 +1,28 @@
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class SavedItemSlot {
+    public int slotIndex;
+    public string itemID;
+    public int count;
+}
 
 [System.Serializable]
 public class SaveData {
     public float[] playerPosition;
     public int playerHealth;
     public GameTimeData gameTimeData;
+
+    public List<SavedItemSlot> inventory; // 🧃 inventory data
 }
 
 
+
+
 public class SaveManager : MonoBehaviour {
+
     public static SaveManager Instance;
     private string savePath;
 
@@ -34,6 +47,7 @@ public class SaveManager : MonoBehaviour {
         data.playerPosition = new float[] { pos.x, pos.y, };
         data.playerHealth = ph.GetCurrentHealth();
         data.gameTimeData = GameTime.Instance.GetTimeData();
+        data.inventory = GameManager.Instance.playerInventory.ToSavedData();
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(savePath, json);
@@ -53,6 +67,7 @@ public class SaveManager : MonoBehaviour {
         playerMovement.transform.position = pos;
         playerHealth.SetCurrentHealth(data.playerHealth);
         GameTime.Instance.SetTimeData(data.gameTimeData);
+        GameManager.Instance.playerInventory.LoadFromSavedData(data.inventory);
 
         Debug.Log("Game Loaded.");
     }

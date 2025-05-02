@@ -14,4 +14,5 @@ public class FoodItem : Item {
             Debug.LogWarning("PlayerHealth not assigned in GameManager!");
         }
     }
+
 }

@@ -14,7 +14,10 @@ public class TestItemGiver : MonoBehaviour {
                 GameManager.Instance.playerInventory.AddItem(itemToGive);
             }
 
-            Debug.Log($"Added {amount} x {itemToGive.itemName} to inventory!");
+            // Force a UI update immediately after giving items
+            GameManager.Instance.playerInventory.ForceUpdate();
+
+            Debug.Log($"Added {amount}x {itemToGive.itemName} to inventory!");
         }
     }
 }
