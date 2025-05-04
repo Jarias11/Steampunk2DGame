@@ -17,6 +17,10 @@ public class HitBox : MonoBehaviour {
         lifeTime = duration;
     }
 
+    private void Awake() {
+        Debug.Log("✅ HitBox Awake on " + gameObject.name);
+    }
+
     private void Update() {
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0f) {
@@ -25,25 +29,22 @@ public class HitBox : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        // 1. Does the thing we hit take damage?
+        Debug.Log($"[HitBox] Hit: {other.name}");
+
         IDamageable damageable = other.GetComponent<IDamageable>();
         if (damageable == null || other.gameObject == this.gameObject) return;
 
-        // 2. Get armor, if any
         ArmorStats defenderArmor = null;
         ArmorHolder armorHolder = other.GetComponent<ArmorHolder>();
         if (armorHolder != null) {
             defenderArmor = armorHolder.Stats;
         }
 
-        // 3. Resolve final damage
         int finalDamage = DamageResolver.Resolve(attackerStats, weaponStats, defenderArmor);
+        Debug.Log($"[HitBox] {other.name} takes {finalDamage} damage");
 
-        // 4. Apply damage
         damageable.TakeDamage(finalDamage);
-
-        // Optional: destroy hitbox on first contact
-        // Destroy(gameObject);
+        // Destroy(gameObject); // if you want 1-hit-per-hitbox behavior
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;

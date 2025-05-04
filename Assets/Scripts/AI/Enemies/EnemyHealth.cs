@@ -1,14 +1,18 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable {
+public class EnemyHealth : MonoBehaviour {
     [SerializeField] private int maxHP = 40;
-    private int currentHP;
+    private Health health;
 
-    public void Awake() => currentHP = maxHP;
-
-    public void TakeDamage(int amount) {
-        currentHP -= amount;
-        if (currentHP <= 0) Die();
+    public void Awake() {
+        health = GetComponent<Health>();
+        if (health != null)
+        {
+            health.SetMaxHealth(maxHP);
+            health.Died += Die;
+        }
+    }    
+    public void Die() { 
+        Destroy(gameObject);
     }
-    public void Die() { }
 }

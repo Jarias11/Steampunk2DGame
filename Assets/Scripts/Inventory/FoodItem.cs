@@ -6,13 +6,21 @@ public class FoodItem : Item {
     public int healAmount;
 
     public override void Use() {
-        if (GameManager.Instance.playerHealth != null) {
-            GameManager.Instance.playerHealth.Heal(healAmount);
-            Debug.Log($"Healed {healAmount} HP with {itemName}");
+        var playerHealth = GameManager.Instance.playerHealth;
+
+        if (playerHealth == null) {
+            Debug.LogWarning("PlayerHealth adapter not assigned!");
+            return;
         }
-        else {
-            Debug.LogWarning("PlayerHealth not assigned in GameManager!");
+
+        var healthComponent = playerHealth.GetComponent<Health>();
+        if (healthComponent == null) {
+            Debug.LogWarning("No Health component found on player!");
+            return;
         }
+
+        healthComponent.Heal(healAmount);
+        Debug.Log($"🍎 Healed player for {healAmount} HP.");
     }
 
 }

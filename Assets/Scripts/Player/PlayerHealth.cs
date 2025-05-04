@@ -1,48 +1,42 @@
 using UnityEngine;
 using System;
 
-public class PlayerHealth : MonoBehaviour, IDamageable {
+public class PlayerHealth : MonoBehaviour {
     [SerializeField] private PlayerStats stats;
-    private int currentHealth;
+    private Health health;
     public bool isDead;
-    [SerializeField] private int startingHealth;
-    //creating an event ... public event Action<int,int> OnHealthChanged;
 
-    void Start() {
-        currentHealth = stats.maxHealth;
-        UIController.Instance.UpdateHealth(currentHealth, stats.maxHealth);
-    }
-    public void Update() {
-        if (Input.GetKeyDown(KeyCode.H)) TakeDamage(10);
-        if (Input.GetKeyDown(KeyCode.J)) Heal(5);
-    }
-    public void TakeDamage(int damageAmount) {
-        Debug.Log("Current Health: " + currentHealth);
-        currentHealth -= damageAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, stats.maxHealth);
-        UIController.Instance.UpdateHealth(currentHealth, stats.maxHealth);
-        if (currentHealth <= 0) {
-            Die();
+    void Awake() {
+        health = GetComponent<Health>();
+        if (health != null) {
+            health.SetMaxHealth(stats.maxHealth);
+            health.HealthChanged += OnHealthChanged;
+            health.Died += OnDeath;
         }
+        ;
     }
-    public void Heal(int healAmount) {
-        Debug.Log("Current Health: " + currentHealth);
-        currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, stats.maxHealth);
-        UIController.Instance.UpdateHealth(currentHealth, stats.maxHealth);
+    private void Start() {
+        OnHealthChanged(health.CurrentHealth, stats.maxHealth);
     }
-    private void Die() {
+
+
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.H)) health.TakeDamage(10);
+        if (Input.GetKeyDown(KeyCode.J)) health.Heal(5);
+    }
+
+    private void OnDeath() {
         isDead = true;
         Debug.Log("Player Died!");
     }
 
-    public int GetCurrentHealth() {
-        return currentHealth;
-    }
+    public int GetCurrentHealth() => health.CurrentHealth;
 
-    public void SetCurrentHealth(int health) {
-        currentHealth = Mathf.Clamp(health, 0, stats.maxHealth);
-        UIController.Instance.UpdateHealth(currentHealth, stats.maxHealth);
+    public void SetCurrentHealth(int val) => health.SetCurrentHealth(val);
+    
+    
+    private void OnHealthChanged(int current, int max) {
+        UIController.Instance.UpdateHealth(current, max);
     }
 }
 

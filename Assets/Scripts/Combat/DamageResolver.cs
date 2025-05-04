@@ -4,13 +4,21 @@ public static class DamageResolver {
     /// <summary>
     /// Calculates final damage based on attacker stats, weapon, and defender armor.
     /// </summary>
+    
+    
+    
+    
     public static int Resolve(
         PlayerStats attackerStats,
         WeaponStats weapon,
         ArmorStats defenderArmor = null
     ) {
-        if (attackerStats == null || weapon == null) {
-            Debug.LogWarning("Missing attacker or weapon data in DamageResolver.");
+        if (attackerStats == null) {
+            Debug.LogWarning("Missing attacker in DamageResolver.");
+            return 0;
+        }
+        if (weapon == null) {
+            Debug.LogWarning("Weapon is null in DamageResolver.");
             return 0;
         }
 
