@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 9058492146679944236}
   - component: {fileID: 7194575905194876015}
   - component: {fileID: 2204290430127535869}
+  - component: {fileID: 4746954877849115598}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -259,7 +260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: e78e78b4716fcf34fa5e75ebd4240647, type: 2}
   isDead: 0
-  startingHealth: 0
 --- !u!95 &4560720979243160762
 Animator:
   serializedVersion: 7
@@ -298,6 +298,8 @@ MonoBehaviour:
   hitboxDuration: 0.1
   hitboxSpawn: {fileID: 4436217469288462745}
   currentWeapon: {fileID: 11400000, guid: ce4a73b7190ac6a47bf68755ee5d823d, type: 2}
+  playerStats: {fileID: 11400000, guid: e78e78b4716fcf34fa5e75ebd4240647, type: 2}
+  lastDirection: {x: 1, y: 0}
 --- !u!114 &7194575905194876015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,3 +327,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armorStats: {fileID: 11400000, guid: 9031ea46a11be9448ba588e044e13c19, type: 2}
+--- !u!114 &4746954877849115598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582612545344464996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95c07049e16cc747b4a400af75cc3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100

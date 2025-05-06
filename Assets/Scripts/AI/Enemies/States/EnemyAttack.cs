@@ -29,7 +29,7 @@ public class EnemyAttack : EnemyBase {
 
         hitbox = go.GetComponent<HitBox>();
         if (hitbox != null && enemyStats != null && weaponStats != null) {
-            hitbox.Init(enemyStats, weaponStats, enemy.hitboxTime);
+            hitbox.Init(enemyStats, weaponStats, enemy.hitboxTime, enemy.gameObject);
         }
         else {
             Debug.LogWarning("Missing hitbox or stats on enemy attack!");

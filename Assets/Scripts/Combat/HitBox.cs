@@ -11,10 +11,12 @@ public class HitBox : MonoBehaviour {
     /// <summary>
     /// Initializes the hitbox with attacker + weapon data and how long it should last.
     /// </summary>
-    public void Init(PlayerStats attacker, WeaponStats weapon, float duration) {
-        attackerStats = attacker;
-        weaponStats = weapon;
-        lifeTime = duration;
+    private GameObject attacker;
+    public void Init(PlayerStats attackerStats, WeaponStats weapon, float duration, GameObject attackerGO) {
+        this.attackerStats = attackerStats;
+        this.weaponStats = weapon;
+        this.lifeTime = duration;
+        this.attacker = attackerGO;
     }
 
     private void Awake() {
@@ -31,8 +33,11 @@ public class HitBox : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log($"[HitBox] Hit: {other.name}");
 
+        if (other.gameObject == this.gameObject || other.gameObject == attacker)
+            return;
+
         IDamageable damageable = other.GetComponent<IDamageable>();
-        if (damageable == null || other.gameObject == this.gameObject) return;
+        if (damageable == null) return;
 
         ArmorStats defenderArmor = null;
         ArmorHolder armorHolder = other.GetComponent<ArmorHolder>();
@@ -48,6 +53,19 @@ public class HitBox : MonoBehaviour {
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, Vector3.one * 0.5f);
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col is CapsuleCollider2D cap) {
+            Vector3 size = new Vector3(cap.size.x, cap.size.y, 0);
+            Vector3 pos = cap.transform.position + (Vector3)cap.offset;
+            Gizmos.matrix = cap.transform.localToWorldMatrix;
+            Gizmos.DrawWireCube(cap.offset, size); // use DrawWireCube since Gizmos lacks capsule drawing
+        }
+        else if (col is BoxCollider2D box) {
+            Vector3 size = new Vector3(box.size.x, box.size.y, 0);
+            Vector3 pos = box.transform.position + (Vector3)box.offset;
+            Gizmos.matrix = box.transform.localToWorldMatrix;
+            Gizmos.DrawWireCube(box.offset, size);
+        }
     }
 }
