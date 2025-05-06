@@ -1240,6 +1240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7086e6985382b764e81870dd031ac13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoad: 
+  noSavedGame: {fileID: 0}
 --- !u!4 &796947346
 Transform:
   m_ObjectHideFlags: 0
