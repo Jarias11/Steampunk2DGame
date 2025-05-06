@@ -1,8 +1,15 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
+
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.IO;
+
 
 public class MainMenu : MonoBehaviour {
+    public string levelToLoad;
+    [SerializeField] private GameObject noSavedGame = null;
     public void StartGame() {
         StartCoroutine(LoadGameSequence());
     }
