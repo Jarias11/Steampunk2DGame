@@ -6,13 +6,22 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-
 public class MainMenu : MonoBehaviour {
     public string levelToLoad;
+    public GameObject loadingScreenPanel;
+    //public Slider loadingBar;
+    public RectTransform newGameTransform;
+    public RectTransform continueTransform;
+    public Button newGameButton;
+    public Button continueButton;
+    private string saveFilePath;
+
+
     [SerializeField] private GameObject noSavedGame = null;
     public void StartGame() {
         CreateSaveFile(); // Create dummy save data
         SceneManager.LoadScene("Main Town");
+        //StartCoroutine(LoadSceneAsync("Main Town"));
     }
 
     public void LoadGame(){
@@ -28,6 +37,24 @@ public class MainMenu : MonoBehaviour {
         else
         {
             noSavedGame.SetActive(true); // Show error UI if no save exists
+        }
+    }
+    public void Start()
+    {
+        saveFilePath = Application.persistentDataPath + "/savefile.json";
+
+        if (File.Exists(saveFilePath))
+        {
+            // Enable Continue
+            continueButton.interactable = true;
+
+            // Swap positions if desired
+            SwapButtonPositions();
+        }
+        else
+        {
+            // Disable Continue button
+            continueButton.interactable = false;
         }
     }
 
@@ -50,5 +77,11 @@ public class MainMenu : MonoBehaviour {
     public void QuitGame() {
         Application.Quit();
         Debug.Log("Game Quit (only works in build)");
+    }
+    public void SwapButtonPositions()
+    {
+        // Move Continue above New Game
+        continueButton.transform.SetSiblingIndex(0);
+        newGameButton.transform.SetSiblingIndex(1);
     }
 }
