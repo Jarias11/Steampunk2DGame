@@ -4,7 +4,11 @@ using UnityEngine;
 public class NPCData : ScriptableObject {
     public string npcName;
     public Sprite portrait;
-    [TextArea(3, 6)] public string[] dialogueLines;
+
+    [Header("Dialogue Profile")]
+    public NPCDialogueData dialogueAsset; // New field
+
+    [Header("Meta Info")]
     public bool isRomanceable;
     public int age;
     public string favoriteItem;

@@ -44,6 +44,9 @@ public class Inventory : MonoBehaviour {
         for (int i = 0; i < maxSlots; i++) {
             slots.Add(new InventoryEntry(null, 0));
         }
+        InventoryChanged += () => {
+            GameManager.Instance.playerQuestTracker?.EvaluateCollectItemObjectives(this);
+        };
     }
 
 
@@ -154,7 +157,6 @@ public class Inventory : MonoBehaviour {
                 Debug.LogWarning($"❌ Failed to restore item '{saved.itemID}' at slot {saved.slotIndex}");
             }
         }
-
         InventoryChanged?.Invoke();
     }
 }

@@ -11289,6 +11289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255e4a87d8c41584dacbf2567df58bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabID: tree
 --- !u!4 &1973435000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4140439138210089525, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}

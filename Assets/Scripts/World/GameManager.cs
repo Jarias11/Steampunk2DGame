@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour {
 
     [Header("Player References")]
     public Inventory playerInventory;
+    public PlayerQuestTracker playerQuestTracker;
     public PlayerHealth playerHealth;
     public PlayerAttack playerAttack;
     public ArmorHolder playerArmorHolder;
+
 
     [Header("Managers")]
     public SaveManager saveManager;

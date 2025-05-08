@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: playerArmorHolder
       value: 
       objectReference: {fileID: 914774555}
+    - target: {fileID: 656418173127282497, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
+      propertyPath: playerQuestTracker
+      value: 
+      objectReference: {fileID: 1839488405}
     - target: {fileID: 5699128153990716331, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.8110158
@@ -367,11 +371,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5699128153990716331, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1623493417}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8725032621622378221, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 906489835}
+    - targetCorrespondingSourceObject: {fileID: 8725032621622378221, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 906489837}
+    - targetCorrespondingSourceObject: {fileID: 8725032621622378221, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 906489838}
   m_SourcePrefab: {fileID: 100100000, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
 --- !u!1 &906489834 stripped
 GameObject:
@@ -393,12 +406,44 @@ MonoBehaviour:
   prefabEntries:
   - prefabID: tree
     prefab: {fileID: 502088449627594103, guid: 38a43ce67106cad4dac7a94cbecda0f0, type: 3}
+--- !u!4 &906489836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5699128153990716331, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
+  m_PrefabInstance: {fileID: 906489833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &906489837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906489834}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d5a8c849927a342ba81b9fd07b5111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingQuestID: gather_wood
+--- !u!114 &906489838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906489834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f6b3f908b81ad459d95d1e2696a0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToGive: {fileID: 11400000, guid: c0d0b244008e7c0458a510a534829a8e, type: 2}
+  amount: 22
 --- !u!114 &914774555 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2204290430127535869, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
   m_PrefabInstance: {fileID: 2142911249}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1839488404}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba4243a2f36ff3244aab38208743cede, type: 3}
@@ -409,7 +454,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7194575905194876015, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
   m_PrefabInstance: {fileID: 2142911249}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1839488404}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c38d31de82f3146428d20f9808c305d7, type: 3}
@@ -420,7 +465,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9058492146679944236, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
   m_PrefabInstance: {fileID: 2142911249}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1839488404}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da3685d1c796b2f4db711fba3151ce76, type: 3}
@@ -431,7 +476,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3264717668702430880, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
   m_PrefabInstance: {fileID: 2142911249}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1839488404}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14777a7296316c741964008537cadf68, type: 3}
@@ -612,6 +657,70 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &1623493416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623493417}
+  - component: {fileID: 1623493418}
+  m_Layer: 0
+  m_Name: QuestDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1623493417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623493416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 906489836}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1623493418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623493416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2790832b01a0f4441b325674ba49e1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allQuests:
+  - {fileID: 11400000, guid: 56c4a9457f088bf46848f6c5fefbe4c2, type: 2}
+--- !u!1 &1839488404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3582612545344464996, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
+  m_PrefabInstance: {fileID: 2142911249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1839488405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839488404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f075647e81c012e41962e0dc357b8f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeQuests: []
 --- !u!1001 &2142911249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -667,7 +776,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3582612545344464996, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1839488405}
   m_SourcePrefab: {fileID: 100100000, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

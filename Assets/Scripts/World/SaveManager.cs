@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public class SavedItemSlot {
@@ -10,14 +11,32 @@ public class SavedItemSlot {
 }
 
 [System.Serializable]
+public class QuestSaveData {
+    public string questId;
+    public bool isActive;
+    public List<int> objectiveProgress;
+}
+
+
+
+[System.Serializable]
 public class SaveData {
     public float[] playerPosition;
     public int playerHealth;
     public GameTimeData gameTimeData;
 
     public List<SavedItemSlot> inventory;
-    public List<WorldObjectData> worldObjects = new();
+    public List<WorldObjectData> worldObjects;
+    public List<QuestSaveData> questProgress;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -46,23 +65,31 @@ public class SaveManager : MonoBehaviour {
     public void SaveGame(PlayerMovement pm, PlayerHealth ph) {
         var data = currentSaveData ?? new SaveData();
         Vector2 pos = pm.transform.position;
-        data.playerPosition = new float[] { pos.x, pos.y, };
+        data.playerPosition = new float[] { pos.x, pos.y };
         data.playerHealth = ph.GetCurrentHealth();
         data.gameTimeData = GameTime.Instance.GetTimeData();
         data.inventory = GameManager.Instance.playerInventory.ToSavedData();
 
+        // Save active quests
+        var tracker = GameManager.Instance.playerQuestTracker;
+        data.questProgress = new List<QuestSaveData>();
+        foreach (var quest in tracker.activeQuests) {
+            data.questProgress.Add(new QuestSaveData {
+                questId = quest.questID,
+                isActive = quest.isActive,
+                objectiveProgress = quest.objectives.Select(o => o.currentAmount).ToList()
+            });
+        }
 
         // Save destructible world objects
         var allBehaviours = Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
         var destructibles = new List<IDestructibleWorldObject>();
-
         foreach (var mb in allBehaviours) {
             if (mb is IDestructibleWorldObject dwo)
                 destructibles.Add(dwo);
         }
 
-
-
+        data.worldObjects = destructibles.Select(d => d.GetSaveData()).ToList();
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(savePath, json);
@@ -95,6 +122,36 @@ public class SaveManager : MonoBehaviour {
         playerHealth.SetCurrentHealth(data.playerHealth);
         GameTime.Instance.SetTimeData(data.gameTimeData);
         GameManager.Instance.playerInventory.LoadFromSavedData(data.inventory);
+
+        var tracker = GameManager.Instance.playerQuestTracker;
+        tracker.activeQuests.Clear(); // Optional: reset existing quests
+
+        foreach (var qsd in data.questProgress) {
+            var questData = QuestDatabase.Instance.GetQuestById(qsd.questId);
+            if (questData == null) {
+                Debug.LogWarning($"⚠️ Quest data not found for ID: {qsd.questId}");
+                continue;
+            }
+
+            Quest loadedQuest = new Quest {
+                questID = questData.questID,
+                title = questData.title,
+                description = questData.description,
+                isActive = qsd.isActive,
+                objectives = questData.objectives.Select((o, i) => new QuestObjective {
+                    type = o.type,
+                    targetId = o.targetId,
+                    requiredAmount = o.requiredAmount,
+                    currentAmount = (i < qsd.objectiveProgress.Count) ? qsd.objectiveProgress[i] : 0
+                }).ToList()
+            };
+
+            tracker.activeQuests.Add(loadedQuest);
+        }
+
+        // ✅ Recalculate quest progress based on inventory after loading quests
+        tracker.EvaluateCollectItemObjectives(GameManager.Instance.playerInventory);
+
 
 
 
