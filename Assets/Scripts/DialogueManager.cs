@@ -13,13 +13,18 @@ public class DialogueManager : MonoBehaviour {
     private int currentIndex = 0;
     private bool isTalking = false;
     public bool justFinishedDialogue = false;
-    private System.Action onDialogueComplete;
+    public System.Action onDialogueComplete;
+    private NPCInteractable currentNPCInteractable;
 
     void Awake() {
         Instance = this;
     }
 
     void Update() {
+        if (isTalking && currentNPCInteractable != null && !currentNPCInteractable.IsPlayerNearby()) {
+            Debug.Log("🛑 Player walked away. Ending dialogue.");
+            EndDialogue();
+        }
         if (isTalking) {
             timeSinceStart += Time.deltaTime;
 
@@ -33,7 +38,8 @@ public class DialogueManager : MonoBehaviour {
         StartDialogue(new System.Collections.Generic.List<string>(lines));
     }
 
-    public void StartDialogue(System.Collections.Generic.List<string> lines, System.Action onComplete = null) {
+    public void StartDialogue(System.Collections.Generic.List<string> lines, System.Action onComplete = null, NPCInteractable npc = null) {
+        currentNPCInteractable = npc;
         if (lines == null || lines.Count == 0) return;
         currentLines = lines.ToArray();
         timeSinceStart = 0f;

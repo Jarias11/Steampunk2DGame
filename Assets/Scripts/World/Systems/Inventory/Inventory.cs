@@ -22,17 +22,8 @@ public class Inventory : MonoBehaviour {
     }
 
 
-
-
-
-
-
-
-
-
     public List<InventoryEntry> slots = new List<InventoryEntry>();
     public int maxSlots = 30;
-
     public delegate void OnInventoryChanged();
     public event OnInventoryChanged InventoryChanged;
 

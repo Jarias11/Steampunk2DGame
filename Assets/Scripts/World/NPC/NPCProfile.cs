@@ -1,10 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-[CreateAssetMenu(menuName = "NPC/NPC Dialogue Data")]
-public class NPCDialogueData : ScriptableObject {
+[CreateAssetMenu(menuName = "NPC/NPC Profile")]
+public class NPCProfile : ScriptableObject {
+    [Header("Identity")]
     public string npcName;
     public Sprite portrait;
+    public bool isRomanceable;
+    public int age;
+    public string favoriteItem;
 
     [Header("Dialogue States")]
     public List<string> initialEncounterLines;
