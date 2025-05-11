@@ -36,11 +36,6 @@ public class SaveData {
 
 
 
-
-
-
-
-
 public class SaveManager : MonoBehaviour {
 
     public static SaveManager Instance;
@@ -89,7 +84,23 @@ public class SaveManager : MonoBehaviour {
                 destructibles.Add(dwo);
         }
 
-        data.worldObjects = destructibles.Select(d => d.GetSaveData()).ToList();
+        // Keep old objects and update or append new ones
+        var newData = destructibles.Select(d => d.GetSaveData()).ToList();
+
+        if (data.worldObjects == null)
+            data.worldObjects = new List<WorldObjectData>();
+
+        foreach (var newObj in newData) {
+            int index = data.worldObjects.FindIndex(existing =>
+                existing.prefabID == newObj.prefabID &&
+                existing.position == newObj.position
+            );
+
+            if (index >= 0)
+                data.worldObjects[index] = newObj; // Update existing
+            else
+                data.worldObjects.Add(newObj); // Add new
+        }
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(savePath, json);
@@ -114,6 +125,7 @@ public class SaveManager : MonoBehaviour {
             SaveGame(playerMovement, playerHealth); // Save the new world state immediately
             return; // Stop here since we've already saved + will load next time
         }
+        Debug.Log("🌱 SpawnInitialObjects() is being triggered");
 
 
 

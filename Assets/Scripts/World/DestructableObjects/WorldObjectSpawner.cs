@@ -25,6 +25,8 @@ public class WorldObjectSpawner : MonoBehaviour {
     public void SpawnInitialObjects() {
         Rect spawnArea = GetSpawnArea();
         var usedPositions = new List<Vector2>();
+        Debug.Log("🌲 Starting world object spawning...");
+        Debug.Log($"Spawnable IDs count: {spawnablePrefabIDs.Count}");
 
         for (int i = 0; i < objectCount * 10 && usedPositions.Count < objectCount; i++) {
             Vector2 randomPos = new Vector2(

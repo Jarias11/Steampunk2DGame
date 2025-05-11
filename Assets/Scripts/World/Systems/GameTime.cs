@@ -63,7 +63,6 @@ public class GameTime : MonoBehaviour {
             }
         }
         UpdateLighting();
-        Debug.Log($"🕒 Time: {hour:D2}:{minute:D2} | Day {day}, Month {month}, Year {year} | Season: {currentSeason}");
         OnTimeChanged?.Invoke(hour, day, month);
 
     }
@@ -80,6 +79,7 @@ public class GameTime : MonoBehaviour {
                 year++;
             }
         }
+        Debug.Log($"🕒 Time: {hour:D2}:{minute:D2} | Day {day}, Month {month}, Year {year} | Season: {currentSeason}");
 
     }
     public void UpdateSeason() {

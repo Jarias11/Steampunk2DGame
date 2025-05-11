@@ -150,10 +150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnablePrefabIDs:
   - tree
-  areaX: -20
-  areaY: -20
-  areaWidth: 40
-  areaHeight: 40
+  - rock_big
+  - rock_small
+  areaX: -3
+  areaY: -5
+  areaWidth: 21
+  areaHeight: 17
   objectCount: 30
   minDistance: 2
 --- !u!4 &969253116
@@ -227,7 +229,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 198345ba94725d845b24792090a4c4a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

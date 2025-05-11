@@ -31,7 +31,6 @@ public class NPCController : MonoBehaviour {
 
     public void SwitchState(NPCState newState) {
         if (currentState != null) {
-            Debug.Log($"🔄 Switching from {currentState.GetType().Name} to {newState.GetType().Name}");
             var prev = currentState;
             currentState = null;
             prev.Exit(this);

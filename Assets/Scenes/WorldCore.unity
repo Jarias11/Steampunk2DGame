@@ -406,6 +406,10 @@ MonoBehaviour:
   prefabEntries:
   - prefabID: tree
     prefab: {fileID: 502088449627594103, guid: 38a43ce67106cad4dac7a94cbecda0f0, type: 3}
+  - prefabID: rock_small
+    prefab: {fileID: 1194017035002571757, guid: 5ea631e843073e2488685c4481406be5, type: 3}
+  - prefabID: rock_big
+    prefab: {fileID: 8021901294311829255, guid: 6f9131bb21f841040baac089c65b1ecc, type: 3}
 --- !u!4 &906489836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5699128153990716331, guid: 5e62628776ed05f4bb2fee10177650a0, type: 3}
@@ -437,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToGive: {fileID: 11400000, guid: c0d0b244008e7c0458a510a534829a8e, type: 2}
-  amount: 22
+  amount: 5
 --- !u!114 &914774555 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2204290430127535869, guid: 3eb8a4825b58af04c9ef5274027384a4, type: 3}
