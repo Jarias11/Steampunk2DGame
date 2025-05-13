@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 502088449627594103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5451586, y: 4.292827, z: -0.031566158}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -153,7 +153,7 @@ Transform:
   m_GameObject: {fileID: 892249452433935693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 1.715, z: 0}
+  m_LocalPosition: {x: 0, y: 1.715, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -202,7 +202,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 4
   m_Sprite: {fileID: -4601303821744029639, guid: 532fa1c988066f948a8f877187758f92, type: 3}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -257,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 2146012435600953759}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.997, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -306,7 +306,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1526340199, guid: 5f3fed345dc83494183405d7e625aad5, type: 3}
   m_Color: {r: 0.58431375, g: 0.34901962, b: 0.20392157, a: 1}
   m_FlipX: 0
@@ -394,7 +394,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -765121689, guid: 5f3fed345dc83494183405d7e625aad5, type: 3}
   m_Color: {r: 0.58431375, g: 0.34901962, b: 0.20392157, a: 1}
   m_FlipX: 0
@@ -440,6 +440,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.020469427, y: 0.16887367}
-  m_Size: {x: 0.6870892, y: 1.1681225}
+  m_Offset: {x: -0.020469427, y: 0.20166743}
+  m_Size: {x: 0.6870892, y: 1.23371}
   m_Direction: 0
