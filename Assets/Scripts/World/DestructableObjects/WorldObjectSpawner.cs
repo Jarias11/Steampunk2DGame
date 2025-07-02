@@ -45,6 +45,10 @@ public class WorldObjectSpawner : MonoBehaviour {
             }
 
             GameObject go = Instantiate(prefab, randomPos, Quaternion.identity);
+            // ✅ Attach YSort if it doesn't exist
+            if (!go.TryGetComponent<YSort>(out _)) {
+                go.AddComponent<YSort>();
+            }
             if (go.TryGetComponent<IDestructibleWorldObject>(out var destructible)) {
                 var data = destructible.GetSaveData();
                 SaveManager.Instance.RegisterWorldObject(data); // We'll create this

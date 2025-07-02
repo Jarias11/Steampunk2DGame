@@ -16,7 +16,10 @@ public class QuestSaveData {
     public bool isActive;
     public List<int> objectiveProgress;
 }
-
+[System.Serializable]
+public class TilledTileData {
+    public int x, y;
+}
 
 
 [System.Serializable]
@@ -28,6 +31,7 @@ public class SaveData {
     public List<SavedItemSlot> inventory;
     public List<WorldObjectData> worldObjects;
     public List<QuestSaveData> questProgress;
+    public List<TilledTileData> tilledTiles;
 }
 
 
@@ -64,6 +68,7 @@ public class SaveManager : MonoBehaviour {
         data.playerHealth = ph.GetCurrentHealth();
         data.gameTimeData = GameTime.Instance.GetTimeData();
         data.inventory = GameManager.Instance.playerInventory.ToSavedData();
+        data.tilledTiles = FindFirstObjectByType<FarmTileManager>()?.GetTilledTilesForSave();
 
         // Save active quests
         var tracker = GameManager.Instance.playerQuestTracker;
@@ -126,6 +131,11 @@ public class SaveManager : MonoBehaviour {
             return; // Stop here since we've already saved + will load next time
         }
         Debug.Log("🌱 SpawnInitialObjects() is being triggered");
+
+
+        if (data.tilledTiles != null && data.tilledTiles.Count > 0) {
+            FindFirstObjectByType<FarmTileManager>()?.LoadTilledTiles(data.tilledTiles);
+        }
 
 
 

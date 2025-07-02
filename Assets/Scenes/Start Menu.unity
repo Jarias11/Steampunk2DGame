@@ -1241,7 +1241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: 
-  noSavedGame: {fileID: 0}
 --- !u!4 &796947346
 Transform:
   m_ObjectHideFlags: 0
