@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: 6874b78ed4728a14aa5391a4f39db6fc
   - enabled: 1
+    path: Assets/Scenes/WorldCore.unity
+    guid: b61c965c42c32ab4c9bf135af7d2dcb0
+  - enabled: 1
+    path: Assets/Scenes/Farm.unity
+    guid: 575afa2a46d488f4abf2c69a2404a4de
+  - enabled: 1
     path: Assets/Scenes/Main Town.unity
     guid: 130aa10d4d06cfd4fb0d7a5972f83390
   m_configObjects:

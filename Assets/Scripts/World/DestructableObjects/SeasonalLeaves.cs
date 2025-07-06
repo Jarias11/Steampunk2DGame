@@ -29,7 +29,5 @@ public class SeasonalLeaves : MonoBehaviour {
     private void ApplyTint(Color tint) {
         tint.a = 1f; // Force full opacity so sprite never disappears
         leafRenderer.color = tint;
-
-        Debug.Log($"[SeasonalLeaves] Applied seasonal tint: {tint}");
     }
 }

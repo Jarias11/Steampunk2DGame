@@ -1,0 +1,1755 @@
+fileFormatVersion: 2
+guid: c3e9c3c268003c047af8a9bf3c2b01f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2322255058386498526
+    second: HouseClock_0
+  - first:
+      213: -5414303985134600783
+    second: HouseClock_1
+  - first:
+      213: -2277646448112696967
+    second: HouseClock_2
+  - first:
+      213: 5619664971231066280
+    second: HouseClock_3
+  - first:
+      213: -143963469983558233
+    second: HouseClock_4
+  - first:
+      213: 8570629006569279365
+    second: HouseClock_5
+  - first:
+      213: -1809060041012817767
+    second: HouseClock_6
+  - first:
+      213: 4220253785486340076
+    second: HouseClock_7
+  - first:
+      213: 4260146690048344594
+    second: HouseClock_8
+  - first:
+      213: 6504238792305739939
+    second: HouseClock_9
+  - first:
+      213: -323103656570301387
+    second: HouseClock_10
+  - first:
+      213: 9058255156006816041
+    second: HouseClock_11
+  - first:
+      213: -1131027454000656271
+    second: HouseClock_12
+  - first:
+      213: 3399587289468823062
+    second: HouseClock_13
+  - first:
+      213: -5519810196334457772
+    second: HouseClock_14
+  - first:
+      213: 485076207154975571
+    second: HouseClock_15
+  - first:
+      213: 4509981815523278468
+    second: HouseClock_16
+  - first:
+      213: -6185999110286435193
+    second: HouseClock_17
+  - first:
+      213: -8475387524951540447
+    second: HouseClock_18
+  - first:
+      213: 3217806684880924215
+    second: HouseClock_19
+  - first:
+      213: -884856091501667077
+    second: HouseClock_20
+  - first:
+      213: 8598832700772399612
+    second: HouseClock_21
+  - first:
+      213: 2747992248439965400
+    second: HouseClock_22
+  - first:
+      213: -503619877043988555
+    second: HouseClock_23
+  - first:
+      213: 6958935383023340502
+    second: HouseClock_24
+  - first:
+      213: 1027084511610915262
+    second: HouseClock_25
+  - first:
+      213: -371128458385899089
+    second: HouseClock_26
+  - first:
+      213: -8371233775198109750
+    second: HouseClock_27
+  - first:
+      213: 1809391194449841754
+    second: HouseClock_28
+  - first:
+      213: 3643153341001337646
+    second: HouseClock_29
+  - first:
+      213: 3323758160542503707
+    second: HouseClock_30
+  - first:
+      213: 3570298875790484016
+    second: HouseClock_31
+  - first:
+      213: -8707202746049555701
+    second: HouseClock_32
+  - first:
+      213: 4053076528081213460
+    second: HouseClock_33
+  - first:
+      213: -2349911979406541486
+    second: HouseClock_34
+  - first:
+      213: -4487504076672935742
+    second: HouseClock_35
+  - first:
+      213: 77314453829354957
+    second: HouseClock_36
+  - first:
+      213: -4140999744909787711
+    second: HouseClock_37
+  - first:
+      213: -1250105676160998011
+    second: HouseClock_38
+  - first:
+      213: -7880266617195890281
+    second: HouseClock_39
+  - first:
+      213: 1308666012494571910
+    second: HouseClock_40
+  - first:
+      213: -2474964045445610774
+    second: HouseClock_41
+  - first:
+      213: -4913639064901475476
+    second: HouseClock_42
+  - first:
+      213: -5750232489015322994
+    second: HouseClock_43
+  - first:
+      213: 3264432646615932695
+    second: HouseClock_44
+  - first:
+      213: 2903793749476452060
+    second: HouseClock_45
+  - first:
+      213: 1037245756576730718
+    second: HouseClock_46
+  - first:
+      213: -7276042929385143091
+    second: HouseClock_47
+  - first:
+      213: -6963531334554497613
+    second: HouseClock_48
+  - first:
+      213: 8737565558457832016
+    second: HouseClock_49
+  - first:
+      213: -8933226877644995866
+    second: HouseClock_50
+  - first:
+      213: -8960850237914778798
+    second: HouseClock_51
+  - first:
+      213: -1312331562799237109
+    second: HouseClock_52
+  - first:
+      213: -5688690020121054765
+    second: HouseClock_53
+  - first:
+      213: 928878206503818608
+    second: HouseClock_54
+  - first:
+      213: 5864625665722187734
+    second: HouseClock_55
+  - first:
+      213: 4823096109442278833
+    second: HouseClock_56
+  - first:
+      213: 1602602496288135708
+    second: HouseClock_57
+  - first:
+      213: -5973526117848382985
+    second: HouseClock_58
+  - first:
+      213: 719337118643716104
+    second: HouseClock_59
+  - first:
+      213: 3377286134349268006
+    second: HouseClock_60
+  - first:
+      213: 6374100546258903213
+    second: HouseClock_61
+  - first:
+      213: 4035564027096278520
+    second: HouseClock_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HouseClock_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed33bf8fbae4a3020800000000000000
+      internalID: 2322255058386498526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bdf11436378cd4b0800000000000000
+      internalID: -5414303985134600783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97100587f9c2460e0800000000000000
+      internalID: -2277646448112696967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a8feee548f0dfd40800000000000000
+      internalID: 5619664971231066280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a55ffe9cf9800ef0800000000000000
+      internalID: -143963469983558233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f883e1cadf0f670800000000000000
+      internalID: 8570629006569279365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_6
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990d31e3a7de4e6e0800000000000000
+      internalID: -1809060041012817767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef29e1457a519a30800000000000000
+      internalID: 4220253785486340076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2124367e7d41f1b30800000000000000
+      internalID: 4260146690048344594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a803bd78b2b34a50800000000000000
+      internalID: 6504238792305739939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_10
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5345f7cafea148bf0800000000000000
+      internalID: -323103656570301387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_11
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92903aa521365bd70800000000000000
+      internalID: 9058255156006816041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1709315e588cd40f0800000000000000
+      internalID: -1131027454000656271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616e8b3c0a2cd2f20800000000000000
+      internalID: 3399587289468823062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_14
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45cc7e32fd1b563b0800000000000000
+      internalID: -5519810196334457772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_15
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35357788d365bb600800000000000000
+      internalID: 485076207154975571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_16
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e7cb9f09ca69e30800000000000000
+      internalID: 4509981815523278468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_17
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 320
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c9e72859ae62aa0800000000000000
+      internalID: -6185999110286435193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d7c7953ff516a80800000000000000
+      internalID: -8475387524951540447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_19
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e64389122f7ac20800000000000000
+      internalID: 3217806684880924215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_20
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfcd3bca21c58b3f0800000000000000
+      internalID: -884856091501667077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_21
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf93d8468c0355770800000000000000
+      internalID: 8598832700772399612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_22
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d68ac5f364d22620800000000000000
+      internalID: 2747992248439965400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_23
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b797fed368c209f0800000000000000
+      internalID: -503619877043988555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_24
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dbc0006cda139060800000000000000
+      internalID: 6958935383023340502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_25
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9cfdcebefe04e00800000000000000
+      internalID: 1027084511610915262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 256
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1ced722ac79daf0800000000000000
+      internalID: -371128458385899089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf7091fb3763db80800000000000000
+      internalID: -8371233775198109750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_28
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e07ec64bf3c1910800000000000000
+      internalID: 1809391194449841754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b89a059a41f8230800000000000000
+      internalID: 3643153341001337646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_30
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13117edf6c502e20800000000000000
+      internalID: 3323758160542503707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032e77949ef3c8130800000000000000
+      internalID: 3570298875790484016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_32
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0319663c3dc92780800000000000000
+      internalID: -8707202746049555701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_33
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41811cfc0ab6f3830800000000000000
+      internalID: 4053076528081213460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_34
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25db90e418f636fd0800000000000000
+      internalID: -2349911979406541486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_35
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8dacd61de29b1c0800000000000000
+      internalID: -4487504076672935742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5808c061da21100800000000000000
+      internalID: 77314453829354957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_37
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd3ba50ca63886c0800000000000000
+      internalID: -4140999744909787711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_38
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58569b8c28bb6aee0800000000000000
+      internalID: -1250105676160998011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_39
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7997baa534ba3a290800000000000000
+      internalID: -7880266617195890281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_40
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689ad540ec0592210800000000000000
+      internalID: 1308666012494571910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_41
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2c957405927add0800000000000000
+      internalID: -2474964045445610774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_42
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63a016dd4f3fcbb0800000000000000
+      internalID: -4913639064901475476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_43
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86d45c64021330b0800000000000000
+      internalID: -5750232489015322994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_44
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 128
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f1bb642389d4d20800000000000000
+      internalID: 3264432646615932695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd62b8ab7095c4820800000000000000
+      internalID: 2903793749476452060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_46
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e89812589056e00800000000000000
+      internalID: 1037245756576730718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_47
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4818f718d460b90800000000000000
+      internalID: -7276042929385143091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_48
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bdc39545219c5f90800000000000000
+      internalID: -6963531334554497613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_49
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0521191f491124970800000000000000
+      internalID: 8737565558457832016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_50
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e28ffb2c7dc60480800000000000000
+      internalID: -8933226877644995866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_51
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2537d9b6f2aa4a380800000000000000
+      internalID: -8960850237914778798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_52
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0871db8569a9cde0800000000000000
+      internalID: -1312331562799237109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_53
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1ff511196bd01b0800000000000000
+      internalID: -5688690020121054765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0751342bec904ec00800000000000000
+      internalID: 928878206503818608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_55
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df720a88f5536150800000000000000
+      internalID: 5864625665722187734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_56
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b520e09b541fe240800000000000000
+      internalID: 4823096109442278833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_57
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a986bba769d3610800000000000000
+      internalID: 1602602496288135708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_58
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1012915a5c91da0800000000000000
+      internalID: -5973526117848382985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80003865c499bf900800000000000000
+      internalID: 719337118643716104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_60
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6248db678d78ede20800000000000000
+      internalID: 3377286134349268006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_61
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0a266ecaa557850800000000000000
+      internalID: 6374100546258903213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseClock_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f52b6fe914310830800000000000000
+      internalID: 4035564027096278520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 502add414f762724e9d38031cfb32d5d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HouseClock_0: 2322255058386498526
+      HouseClock_1: -5414303985134600783
+      HouseClock_10: -323103656570301387
+      HouseClock_11: 9058255156006816041
+      HouseClock_12: -1131027454000656271
+      HouseClock_13: 3399587289468823062
+      HouseClock_14: -5519810196334457772
+      HouseClock_15: 485076207154975571
+      HouseClock_16: 4509981815523278468
+      HouseClock_17: -6185999110286435193
+      HouseClock_18: -8475387524951540447
+      HouseClock_19: 3217806684880924215
+      HouseClock_2: -2277646448112696967
+      HouseClock_20: -884856091501667077
+      HouseClock_21: 8598832700772399612
+      HouseClock_22: 2747992248439965400
+      HouseClock_23: -503619877043988555
+      HouseClock_24: 6958935383023340502
+      HouseClock_25: 1027084511610915262
+      HouseClock_26: -371128458385899089
+      HouseClock_27: -8371233775198109750
+      HouseClock_28: 1809391194449841754
+      HouseClock_29: 3643153341001337646
+      HouseClock_3: 5619664971231066280
+      HouseClock_30: 3323758160542503707
+      HouseClock_31: 3570298875790484016
+      HouseClock_32: -8707202746049555701
+      HouseClock_33: 4053076528081213460
+      HouseClock_34: -2349911979406541486
+      HouseClock_35: -4487504076672935742
+      HouseClock_36: 77314453829354957
+      HouseClock_37: -4140999744909787711
+      HouseClock_38: -1250105676160998011
+      HouseClock_39: -7880266617195890281
+      HouseClock_4: -143963469983558233
+      HouseClock_40: 1308666012494571910
+      HouseClock_41: -2474964045445610774
+      HouseClock_42: -4913639064901475476
+      HouseClock_43: -5750232489015322994
+      HouseClock_44: 3264432646615932695
+      HouseClock_45: 2903793749476452060
+      HouseClock_46: 1037245756576730718
+      HouseClock_47: -7276042929385143091
+      HouseClock_48: -6963531334554497613
+      HouseClock_49: 8737565558457832016
+      HouseClock_5: 8570629006569279365
+      HouseClock_50: -8933226877644995866
+      HouseClock_51: -8960850237914778798
+      HouseClock_52: -1312331562799237109
+      HouseClock_53: -5688690020121054765
+      HouseClock_54: 928878206503818608
+      HouseClock_55: 5864625665722187734
+      HouseClock_56: 4823096109442278833
+      HouseClock_57: 1602602496288135708
+      HouseClock_58: -5973526117848382985
+      HouseClock_59: 719337118643716104
+      HouseClock_6: -1809060041012817767
+      HouseClock_60: 3377286134349268006
+      HouseClock_61: 6374100546258903213
+      HouseClock_62: 4035564027096278520
+      HouseClock_7: 4220253785486340076
+      HouseClock_8: 4260146690048344594
+      HouseClock_9: 6504238792305739939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

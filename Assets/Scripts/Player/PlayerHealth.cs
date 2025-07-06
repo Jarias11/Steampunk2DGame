@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour {
     public bool isDead;
 
     void Awake() {
+        DontDestroyOnLoad(gameObject);
         health = GetComponent<Health>();
         if (health != null) {
             health.SetMaxHealth(stats.maxHealth);

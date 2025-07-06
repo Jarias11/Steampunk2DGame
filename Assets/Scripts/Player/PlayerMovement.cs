@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour {
             cooldownRemaining -= Time.deltaTime;
         }
         if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0)) {
+            GetComponent<PlayerAttack>().lastDirection = lastMoveDir;
             StartCoroutine(AttackRoutine());
         }
 
