@@ -6,17 +6,57 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-
 public class MainMenu : MonoBehaviour {
     public string levelToLoad;
-    //[SerializeField] private GameObject noSavedGame = null;
+    public GameObject loadingScreenPanel;
+    //public Slider loadingBar;
+    public RectTransform newGameTransform;
+    public RectTransform continueTransform;
+    public Button newGameButton;
+    public Button continueButton;
+    private string saveFilePath;
+
+
+    [SerializeField] private GameObject noSavedGame = null;
     public void StartGame() {
-        StartCoroutine(LoadGameSequence());
+        CreateSaveFile(); // Create dummy save data
+        SceneManager.LoadScene("Main Town");
+        //StartCoroutine(LoadSceneAsync("Main Town"));
     }
 
-    private IEnumerator LoadGameSequence() {
-        //I HAD TO MAKE THIS MORE COMPLICATED BASICALLY IT LOADS TWO SCENES AT ONCE AND UNLOADS THE START MENU SCENE.
+    public void LoadGame(){
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            GameData data = JsonUtility.FromJson<GameData>(json);
 
+            Debug.Log("Continuing from scene: " + data.savedScene);
+            SceneManager.LoadScene(data.savedScene); // Load the saved scene
+        }
+        else
+        {
+            noSavedGame.SetActive(true); // Show error UI if no save exists
+        }
+    }
+    public void Start()
+    {
+        saveFilePath = Application.persistentDataPath + "/savefile.json";
+
+        if (File.Exists(saveFilePath))
+        {
+            // Enable Continue
+            continueButton.interactable = true;
+
+            // Swap positions if desired
+            SwapButtonPositions();
+        }
+        else
+        {
+            // Disable Continue button
+            continueButton.interactable = false;
+        }
+    }
 
         // Step 1: Load WorldCore (persistent systems)
         AsyncOperation coreLoad = SceneManager.LoadSceneAsync("WorldCore", LoadSceneMode.Additive);
@@ -33,6 +73,12 @@ public class MainMenu : MonoBehaviour {
     public void QuitGame() {
         Application.Quit();
         Debug.Log("Game Quit (only works in build)");
+    }
+    public void SwapButtonPositions()
+    {
+        // Move Continue above New Game
+        continueButton.transform.SetSiblingIndex(0);
+        newGameButton.transform.SetSiblingIndex(1);
     }
 }
 
