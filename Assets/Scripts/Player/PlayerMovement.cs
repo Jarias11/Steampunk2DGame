@@ -60,6 +60,9 @@ public class PlayerMovement : MonoBehaviour {
         if (movement != Vector2.zero && !isAttacking)
             lastMoveDir = movement;
 
+        animator.SetFloat("LastMoveX", lastMoveDir.x);
+        animator.SetFloat("LastMoveY", lastMoveDir.y);
+
         animator.SetFloat("MoveX", moveX);
         animator.SetFloat("MoveY", moveY);
 
